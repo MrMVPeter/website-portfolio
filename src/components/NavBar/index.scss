@@ -1,0 +1,233 @@
+@use "../../abstracts";
+@use "../../abstracts/colors" as c;
+
+nav {
+    // POS & Apperance;
+    height: 5em;
+    background-color: c.$grey0;
+    
+    // LAYOUT
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    #contact {
+        text-decoration: none;
+        h1, p {
+            margin: 0;
+            color: black;
+        }
+    }
+
+    #LOGO {
+        cursor: default;
+        user-select: none;
+        margin: 0;
+        h1 {
+            font-size: min(3em, 8vw);
+            margin: 0;
+        }
+    }
+
+    #pages {
+        display: flex;
+        margin: auto 2em;
+        list-style: none;
+        li a{
+            text-decoration: none;
+            // direction: none;
+            margin: 0 1em;
+            font-size: 1.5em;
+            color: black;
+        }
+    }
+
+    #hamburger {
+        display: none;
+
+        user-select: none;
+
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin: 6px 0;
+            position: relative;
+
+            background-color: black;
+            border-radius: px;
+
+            transform-origin: (width / 2) 0;
+            transition-duration: 600ms;
+
+        }
+    }    
+}
+
+#dropDownMenu{
+    display: none;
+    position: absolute;
+    list-style: none;
+    top: 5em;
+    left: -100%;
+    width: 100%;
+    margin: 0 0;
+    padding: 0 0;
+    background-color: black;
+
+    transition: all 600ms;
+    li {
+        margin: auto;
+    }
+}
+
+// Only uses hover transform animation on devices that support it
+@media (hover: hover) {
+    #hamburger:hover {
+        span:nth-child(2) {
+            transform: translateX(10px);
+            background-color: grey;
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    nav {
+        #pages {
+            display: none;
+            // DropDwonMenu underneath Nav
+        }
+        #hamburger {
+            display: block;
+        }
+    }
+    #dropDownMenu {
+        display: flex;
+        flex-direction: column;
+        
+        // transition: all 600ms;
+
+    }
+}
+
+// --------React Transition Group Classes--------
+// Hamburger Butten
+// Enter State
+.hambState-enter #hamburger{
+    span:nth-child(1) {
+        rotate: 0deg;
+    } 
+    span:nth-child(2) {
+        translate: 0 0;
+    }  
+    span:nth-child(3) {
+        rotate: 0deg;
+    }
+}
+.hambState-enter-active #hamburger{    
+    span:nth-child(1) {
+        rotate: 45deg;
+        translate: 0 10px;
+    } 
+    span:nth-child(2) {
+        translate: 10px 0;
+        opacity: 0;
+    }  
+    span:nth-child(3) {
+        rotate: -45deg;
+        translate: 0 -10px;
+    }
+}
+.hambState-enter-done #hamburger{    
+    span:nth-child(1) {
+        rotate: 45deg;
+        translate: 0 10px;
+    } 
+    span:nth-child(2) {
+        translate: 10px 0;
+        opacity: 0;
+    }  
+    span:nth-child(3) {
+        rotate: -45deg;
+        translate: 0 -10px;
+    }
+}
+// Exit State
+.hambState-exit #hamburger{
+    span:nth-child(1) {
+        rotate: 45deg;
+        translate: 0 10px;
+    } 
+    span:nth-child(2) {
+        translate: 10px 0;
+        opacity: 0;
+    }    
+    span:nth-child(3) {
+        rotate: -45deg;
+        translate: 0 -10px;
+    }
+}
+.hambState-exit-active #hamburger{    
+    span:nth-child(1) {
+        rotate: 0deg;
+        translate: 0 0px;
+    } 
+    span:nth-child(2) {
+        translate: 0 0;
+        opacity: 1;
+    }  
+    span:nth-child(3) {
+        rotate: 0deg;
+        translate: 0 0px;
+    }
+}
+.hambState-exit-done #hamburger{
+    span:nth-child(1) {
+        rotate: 0deg;
+        translate: 0 0px;
+    } 
+    span:nth-child(2) {
+        translate: 0 0;
+        opacity: 1;
+    }  
+    span:nth-child(3) {
+        rotate: 0deg;
+        translate: 0 0px;
+    }
+}
+
+
+// DropDown Menu Transitions
+// Enter
+.dropMenu-enter #dropDownMenu{
+    left: -100%;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+.dropMenu-enter-active #dropDownMenu{
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+.dropMenu-enter-done #dropDownMenu{
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+// Exit
+.dropMenu-exit #dropDownMenu{
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+.dropMenu-exit-active #dropDownMenu{
+    left: -100%;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+.dropMenu-exit-done #dropDownMenu{
+    left: -100%;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+
+
