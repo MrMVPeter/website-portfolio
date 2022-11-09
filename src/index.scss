@@ -1,5 +1,11 @@
+@use "./abstracts/colors" as colors;
 body {
-  background-color: gray;
+  background-color: var(colors.$primary_black);
+  background-image: url(./assets/stars_BG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,4 +17,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width:720px) {
+  body {
+    background-image: url(./assets/stars_BG_mobile.jpg);
+  }
 }

@@ -83,6 +83,11 @@ nav {
     transition: all 600ms;
     li {
         margin: auto;
+        padding: 1em 0;
+        a {
+            text-decoration: none;
+            color: black;
+        }
     }
 }
 

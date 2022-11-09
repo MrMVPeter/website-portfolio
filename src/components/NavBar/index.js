@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom'
 import './index.scss'
-import { MenuItemsRight } from './MenuItems';
+import { MenuItemsLeft, MenuItemsRight } from './MenuItems';
 
 function NavBar() {
   const [navVerticleState, setNavVerticleState] = useState(false);
@@ -75,16 +75,28 @@ function NavBar() {
               return (
                 <li key={index}>
                   <Link   /* TODO? Change to NavLink to add some Active State*/
-                  to={item.url}
-                  onClick={()=>{
-                    setNavVerticleState(false);
-                  }}
+                    to={item.url}
+                    onClick={()=>{
+                      setNavVerticleState(false);
+                    }}
                   >
                     {item.title}
                   </Link>
                 </li>
               )
             })}
+
+            {/* Add Contact Info */}
+            <li key={MenuItemsRight.length}>
+              <Link
+                to={MenuItemsLeft[0].url}
+                onClick={()=>{
+                  setNavVerticleState(false);
+                }}
+              >
+                {MenuItemsLeft[0].title}
+              </Link>
+            </li>
         </ul>
       </div>
     </CSSTransition>
