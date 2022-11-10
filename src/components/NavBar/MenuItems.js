@@ -1,14 +1,6 @@
 // This Script Lays out Page meta-data
 // for pages ledt and right of the Title/Logo
-const MenuItemsLeft = 
-    [
-        {
-            title: 'Contact',
-            url: '/Contact',
-            cName: 'nav-links'
-        }   
-    ]
-const MenuItemsRight = [
+const MenuItems = [
         {
             title: 'Home',
             url: '/Home',
@@ -25,6 +17,11 @@ const MenuItemsRight = [
             cName: 'nav-links'
         },
         {
+            title: 'Contact',
+            url: '/Contact',
+            cName: 'nav-links'
+        },   
+        {
             title: 'More',
             url: '/More',
             cName: 'nav-links'
@@ -32,4 +29,4 @@ const MenuItemsRight = [
         
     ]
 
-export {MenuItemsLeft, MenuItemsRight};
+export default MenuItems;

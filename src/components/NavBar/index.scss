@@ -1,4 +1,5 @@
 @use "../../abstracts/" as *;
+// nav {@include css-reset}
 
 nav {
     // POS & Apperance;
@@ -20,7 +21,6 @@ nav {
     #LOGO {
         cursor: default;
         user-select: none;
-        margin: 0;
         h1 {
             font-size: min(3em, 8vw);
             margin: 0;
@@ -30,7 +30,7 @@ nav {
 
     #pages {
         display: flex;
-        margin: auto 2em;
+        // margin: auto 2em;
         list-style: none;
         li {
             position: relative;
@@ -50,13 +50,12 @@ nav {
 
     #hamburger {
         display: none;
-
         user-select: none;
-
         appearance: none;
         border: none;
         outline: none;
         background: none;
+        margin: 0 2em;
         cursor: pointer;
         span {
             display: block;
@@ -77,25 +76,43 @@ nav {
 
 #dropDownMenu{
     display: none;
+    flex-direction: column;
     position: absolute;
     list-style: none;
     top: 5em;
     left: -100%;
     width: 100%;
+    height: 60vh;
     margin: 0 0;
     padding: 0 0;
 
     transition: all $slow_trans;
     li {
-        margin: auto;
-        padding: 1em 0;
+        flex-grow: 1;
+        padding: 1em 2em;
+        margin: 0 auto;
+        position: relative;
         a {
+            // position: relative;
             text-decoration: none;
-            color: $primary_neon;
-            padding: 0.5em 4em;
-            background-color: $second_black;
+            transition: all ease $med_trans;
+            margin: 0;
+            h2 {
+                color: $primary_neon;
+                position: relative;
+                margin: 0;
+            }
+        }
+        a::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            // inset: 10px 0;
+            background-color: violet;
             border-radius: 1em;
-            transition: all $med_trans;
+            width: 100%;
+            transition: all ease $med_trans;
         }
     }
 }
@@ -108,9 +125,6 @@ nav {
             background-color: $fadded_neon;
         }
     }
-    #dropDownMenu li a:hover {
-        background-color: $tertiary_black;
-    }
 
     // Page Links Button Mouse-Over Effects WideScreen
     #pages li {
@@ -122,7 +136,7 @@ nav {
             transform: translate(5px, 5px);
         }
 
-        // 
+        // Button UI animation
         a::before {
             content: "";
             display: block;
@@ -131,7 +145,7 @@ nav {
             background-color: aqua;
             border-radius: 1em;
             width: 0;
-            transition: all ease-in-out 200ms;
+            transition: all ease 200ms;
             z-index: 1;
         }
         a:hover::before {
@@ -149,7 +163,7 @@ nav {
             background-color: purple;
             border-radius: 1em;
             width: 0;
-            transition: all ease-in-out 200ms;
+            transition: all ease 200ms;
             z-index: 0;
         }
         a:hover::after {
@@ -166,7 +180,6 @@ nav {
     nav {
         #pages {
             display: none;
-            // DropDwonMenu underneath Nav
         }
         #hamburger {
             display: block;
@@ -174,10 +187,6 @@ nav {
     }
     #dropDownMenu {
         display: flex;
-        flex-direction: column;
-        
-        // transition: all 600ms;
-
     }
 }
 

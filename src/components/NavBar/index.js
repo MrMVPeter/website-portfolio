@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom'
 import './index.scss'
-import { MenuItemsLeft, MenuItemsRight } from './MenuItems';
+import MenuItems from './MenuItems';
 
 function NavBar() {
   const [navVerticleState, setNavVerticleState] = useState(false);
@@ -12,10 +12,10 @@ function NavBar() {
     <>
     <nav>
       {/* Contact us Link and graphic */}
-      <Link to="/Contact" id='contact'>
-        <h1>&lt;C&gt;</h1>
-        <p>Contact</p>
-      </Link>
+      {/* <Link to="/Contact" id='contact'>
+        <h1>&lt;P&gt;</h1>
+      </Link> */}
+      {/* <img src={user} alt="Me" /> */}
       
 
       {/* Contains Name in Logo Form */}
@@ -26,7 +26,7 @@ function NavBar() {
       {/* Links to all pages when on widescreen */}
       <ul id='pages'>
         {/* Dynamically Creats Page links from MenuItemsRight */}
-        {MenuItemsRight.map((item, index) => {
+        {MenuItems.map((item, index) => {
           return (
             <li key={index}>
               <Link   /* TODO? Change to NavLink to add some Active State*/
@@ -71,7 +71,7 @@ function NavBar() {
       <div>
         <ul id='dropDownMenu'>
             {/* Dynamically Creats Page links from MenuItemsRight */}
-            {MenuItemsRight.map((item, index) => {
+            {MenuItems.map((item, index) => {
               return (
                 <li key={index}>
                   <Link   /* TODO? Change to NavLink to add some Active State*/
@@ -80,23 +80,11 @@ function NavBar() {
                       setNavVerticleState(false);
                     }}
                   >
-                    {item.title}
+                    <h2>{item.title}</h2>
                   </Link>
                 </li>
               )
             })}
-
-            {/* Add Contact Info */}
-            <li key={MenuItemsRight.length}>
-              <Link
-                to={MenuItemsLeft[0].url}
-                onClick={()=>{
-                  setNavVerticleState(false);
-                }}
-              >
-                {MenuItemsLeft[0].title}
-              </Link>
-            </li>
         </ul>
       </div>
     </CSSTransition>
