@@ -1,5 +1,7 @@
+@use "./abstracts/colors" as c;
 #App {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: c.$primary_black;
 }
