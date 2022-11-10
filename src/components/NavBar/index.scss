@@ -33,12 +33,14 @@ nav {
         display: flex;
         margin: auto 2em;
         list-style: none;
-        li a{
-            text-decoration: none;
-            // direction: none;
-            margin: 0 1em;
-            font-size: 1.5em;
-            color: c.$primary_neon;
+        li {
+            position: relative;
+            a{
+                text-decoration: none;
+                margin: 0 1em;
+                font-size: 1.5em;
+                color: c.$primary_neon;
+            }
         }
     }
 
@@ -63,7 +65,7 @@ nav {
             border-radius: 2px;
 
             transform-origin: (width / 2) 0;
-            transition-duration: 600ms;
+            transition-duration: 200ms;
 
         }
     }    
@@ -101,7 +103,48 @@ nav {
             background-color: c.$fadded_neon;
         }
     }
+    #dropDownMenu li a:hover {
+        background-color: c.$tertiary_black;
+    }
+
+    // Page Links Button Mouse-Over Effects WideScreen
+    #pages li {
+        a::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-color: aqua;
+            border-radius: 1em;
+            width: 0;
+            transition: all ease-in-out 200ms;
+            z-index: 1;
+        }
+        a:hover::before {
+            width: 100%;
+        }
+        a:active::before {
+            transform: translate(5px, 5px);
+        }
+
+        a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            transform: translate(5px, 5px);
+            background-color: purple;
+            border-radius: 1em;
+            width: 0;
+            transition: all ease-in-out 200ms;
+        }
+        a:hover::after {
+            width: 100%;
+        }
+    }
+    
 }
+
 
 @media (max-width: 1250px) {
     nav {
