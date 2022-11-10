@@ -1,5 +1,4 @@
-@use "../../abstracts";
-@use "../../abstracts/colors" as c;
+@use "../../abstracts/" as *;
 
 nav {
     // POS & Apperance;
@@ -14,7 +13,7 @@ nav {
         text-decoration: none;
         h1, p {
             margin: 0;
-            color: c.$primary_neon;
+            color: $primary_neon;
         }
     }
 
@@ -25,7 +24,7 @@ nav {
         h1 {
             font-size: min(3em, 8vw);
             margin: 0;
-            color: c.$primary_neon;
+            color: $primary_neon;
         }
     }
 
@@ -35,11 +34,16 @@ nav {
         list-style: none;
         li {
             position: relative;
-            a{
+            a {
                 text-decoration: none;
-                margin: 0 1em;
-                font-size: 1.5em;
-                color: c.$primary_neon;
+                h2 {
+                    transition: all 200ms;
+                    margin: 0 1em;
+                    font-size: 1.5em;
+                    color: $primary_neon;
+                    position: relative;
+                    z-index: 2;
+                }
             }
         }
     }
@@ -61,7 +65,7 @@ nav {
             margin: 6px 0;
             position: relative;
 
-            background-color: c.$primary_neon;
+            background-color: $primary_neon;
             border-radius: 2px;
 
             transform-origin: (width / 2) 0;
@@ -81,16 +85,17 @@ nav {
     margin: 0 0;
     padding: 0 0;
 
-    transition: all 600ms;
+    transition: all $slow_trans;
     li {
         margin: auto;
         padding: 1em 0;
         a {
             text-decoration: none;
-            color: c.$primary_neon;
+            color: $primary_neon;
             padding: 0.5em 4em;
-            background-color: c.$second_black;
+            background-color: $second_black;
             border-radius: 1em;
+            transition: all $med_trans;
         }
     }
 }
@@ -100,15 +105,24 @@ nav {
     #hamburger:hover {
         span:nth-child(2) {
             transform: translateX(10px);
-            background-color: c.$fadded_neon;
+            background-color: $fadded_neon;
         }
     }
     #dropDownMenu li a:hover {
-        background-color: c.$tertiary_black;
+        background-color: $tertiary_black;
     }
 
     // Page Links Button Mouse-Over Effects WideScreen
     #pages li {
+        // Text Transformation
+        a:hover h2 {
+            color: $tertiary_black;
+        }
+        a:active h2 {
+            transform: translate(5px, 5px);
+        }
+
+        // 
         a::before {
             content: "";
             display: block;
@@ -126,7 +140,6 @@ nav {
         a:active::before {
             transform: translate(5px, 5px);
         }
-
         a::after {
             content: "";
             display: block;
@@ -137,6 +150,7 @@ nav {
             border-radius: 1em;
             width: 0;
             transition: all ease-in-out 200ms;
+            z-index: 0;
         }
         a:hover::after {
             width: 100%;
@@ -144,6 +158,8 @@ nav {
     }
     
 }
+
+
 
 
 @media (max-width: 1250px) {

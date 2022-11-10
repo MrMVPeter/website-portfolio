@@ -32,7 +32,7 @@ function NavBar() {
               <Link   /* TODO? Change to NavLink to add some Active State*/
               to={item.url}
               >
-                {item.title}
+                <h2>{item.title}</h2>
               </Link>
             </li>
           )
