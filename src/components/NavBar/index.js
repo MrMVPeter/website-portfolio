@@ -13,7 +13,7 @@ function NavBar() {
     <nav>
       {/* Contains Name in Logo Form */}
       <div id='LOGO'>
-        <h1> &lt;PeterR Gilliam&gt;</h1>
+        <h1> &lt;Peter Gilliam&gt;</h1>
       </div>
 
       {/* Links to all pages when on widescreen */}
