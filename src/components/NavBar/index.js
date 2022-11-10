@@ -1,88 +1,82 @@
-import React, { useState } from 'react'
-import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom'
-import './index.scss'
-import MenuItems from './MenuItems';
+import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
+import "./index.scss";
+import MenuItems from "./MenuItems";
 
 function NavBar() {
   const [navVerticleState, setNavVerticleState] = useState(false);
 
-
   return (
     <>
-    <nav>
-      {/* Contains Name in Logo Form */}
-      <div id='LOGO'>
-        <h1> &lt;Peter Gilliam&gt;</h1>
-      </div>
+      <nav>
+        {/* Contains Name in Logo Form */}
+        <div id="LOGO">
+          <h1> &lt;Peter Gilliam&gt;</h1>
+        </div>
 
-      {/* Links to all pages when on widescreen */}
-      <ul id='pages'>
-        {/* Dynamically Creats Page links from MenuItemsRight */}
-        {MenuItems.map((item, index) => {
-          return (
-            <li key={index}>
-              <Link   /* TODO? Change to NavLink to add some Active State*/
-              to={item.url}
-              >
-                <h2>{item.title}</h2>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+        {/* Links to all pages when on widescreen */}
+        <ul id="pages">
+          {/* Dynamically Creats Page links from MenuItemsRight */}
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link /* TODO? Change to NavLink to add some Active State*/
+                  to={item.url}
+                >
+                  <h2>{item.title}</h2>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-
-      {/* Mobile Only! Hambuger Menu */}
-      <CSSTransition
+        {/* Mobile Only! Hambuger Menu */}
+        <CSSTransition
           in={navVerticleState}
           timeout={600}
           classNames="hambState"
-          >
-        <div>
-          {/* Hamburger Link for Responsive layout */}
-          <button id='hamburger' onClick={()=>{
-              setNavVerticleState(!navVerticleState);
-            }}>
-            
-            {/* Lines */}
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </CSSTransition>
+        >
+          <div>
+            {/* Hamburger Link for Responsive layout */}
+            <button
+              id="hamburger"
+              onClick={() => {
+                setNavVerticleState(!navVerticleState);
+              }}
+            >
+              {/* Lines */}
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </CSSTransition>
+      </nav>
 
-      
-    </nav>
-    
-    <CSSTransition
-      in={navVerticleState}
-      timeout={600}
-      classNames="dropMenu"
-    >
-      <div>
-        <ul id='dropDownMenu'>
+      <CSSTransition in={navVerticleState} timeout={600} classNames="dropMenu">
+        <div>
+          <ul id="dropDownMenu">
             {/* Dynamically Creats Page links from MenuItemsRight */}
             {MenuItems.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link   /* TODO? Change to NavLink to add some Active State*/
+                  <Link /* TODO? Change to NavLink to add some Active State*/
                     to={item.url}
-                    onClick={()=>{
+                    onClick={() => {
                       setNavVerticleState(false);
                     }}
                   >
                     <h2>{item.title}</h2>
                   </Link>
                 </li>
-              )
+              );
             })}
-        </ul>
-      </div>
-    </CSSTransition>
+          </ul>
+        </div>
+      </CSSTransition>
     </>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

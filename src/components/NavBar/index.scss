@@ -2,301 +2,330 @@
 // nav {@include css-reset}
 
 nav {
-    // POS & Apperance;
-    height: 5em;
-    
-    // LAYOUT
+  // POS & Apperance;
+  height: 5em;
+
+  // LAYOUT
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  #contact {
+    text-decoration: none;
+    h1,
+    p {
+      margin: 0;
+      color: $primary_neon;
+    }
+  }
+
+  #LOGO {
+    cursor: default;
+    user-select: none;
+    h1 {
+      font-size: min(3em, 8vw);
+      margin: 0;
+      color: $primary_neon;
+    }
+  }
+
+  #pages {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    #contact {
-        text-decoration: none;
-        h1, p {
-            margin: 0;
-            color: $primary_neon;
-        }
-    }
-
-    #LOGO {
-        cursor: default;
-        user-select: none;
-        h1 {
-            font-size: min(3em, 8vw);
-            margin: 0;
-            color: $primary_neon;
-        }
-    }
-
-    #pages {
-        display: flex;
-        // margin: auto 2em;
-        list-style: none;
-        li {
-            position: relative;
-            a {
-                text-decoration: none;
-                h2 {
-                    transition: all 200ms;
-                    margin: 0 1em;
-                    font-size: 1.5em;
-                    color: $primary_neon;
-                    position: relative;
-                    z-index: 2;
-                }
-            }
-        }
-    }
-
-    #hamburger {
-        display: none;
-        user-select: none;
-        appearance: none;
-        border: none;
-        outline: none;
-        background: none;
-        margin: 0 2em;
-        cursor: pointer;
-        span {
-            display: block;
-            width: 33px;
-            height: 4px;
-            margin: 6px 0;
-            position: relative;
-
-            background-color: $primary_neon;
-            border-radius: 2px;
-
-            transform-origin: (width / 2) 0;
-            transition-duration: 200ms;
-
-        }
-    }    
-}
-
-#dropDownMenu{
-    display: none;
-    flex-direction: column;
-    position: absolute;
+    // margin: auto 2em;
     list-style: none;
-    top: 5em;
-    left: -100%;
-    width: 100%;
-    height: 60vh;
-    margin: 0 0;
-    padding: 0 0;
-
-    transition: all $slow_trans;
     li {
-        flex-grow: 1;
-        padding: 1em 2em;
-        margin: 0 auto;
+      a {
         position: relative;
-        a {
-            // position: relative;
-            text-decoration: none;
-            transition: all ease $med_trans;
-            margin: 0;
-            h2 {
-                color: $primary_neon;
-                position: relative;
-                margin: 0;
-            }
+        text-decoration: none;
+        h2 {
+          transition: all 200ms;
+          margin: 0 1em;
+          font-size: 1.5em;
+          color: $primary_neon;
+          position: relative;
+          z-index: 2;
         }
-        a::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            // inset: 10px 0;
-            background-color: violet;
-            border-radius: 1em;
-            width: 100%;
-            transition: all ease $med_trans;
-        }
+      }
     }
+  }
+
+  #hamburger {
+    display: none;
+    user-select: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    margin: 0 2em;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin: 6px 0;
+      position: relative;
+
+      background-color: $primary_neon;
+      border-radius: 2px;
+
+      transform-origin: (width / 2) 0;
+      transition-duration: 200ms;
+    }
+  }
 }
 
-// Only uses hover transform animation on devices that support it
+#dropDownMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  list-style: none;
+  top: 5em;
+  left: -100%;
+  width: 100%;
+  margin: 0 0;
+  padding: 0 0;
+  background-color: $tertiary_black;
+
+  transition: all $slow_trans;
+  li {
+    display: flex; // Used flex to center its child
+    align-items: center;
+    flex-grow: 1;
+    padding: 1em 2em;
+    margin: 0 auto;
+    a {
+      position: relative;
+      text-decoration: none;
+      transition: all ease $med_trans;
+      h2 {
+        font-size: 1.5em;
+        color: $TEMP;
+        position: relative;
+        margin: 0.5em 1em;
+        transition: all ease $med_trans;
+        z-index: 2;
+      }
+    }
+    a::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $TEMP2;
+      border-radius: 2em;
+      width: 100%;
+      transition: all ease $med_trans;
+      z-index: 1;
+    }
+    a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $TEMP;
+      border-radius: 2em;
+      width: 100%;
+      transition: all ease $med_trans;
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+      z-index: 0;
+    }
+    a:hover {
+      transform: scale(1.5);
+    }
+    a:active::before {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
+    a:active h2 {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
+  }
+}
+
+// Multiple Hover Animations ONLY for devices that support it
 @media (hover: hover) {
-    #hamburger:hover {
-        span:nth-child(2) {
-            transform: translateX(10px);
-            background-color: $fadded_neon;
-        }
+  #hamburger:hover {
+    span:nth-child(2) {
+      transform: translateX(10px);
+      background-color: $fadded_neon;
+    }
+  }
+
+  // Page Links Button Mouse-Over Effects WideScreen
+  #pages li {
+    // Text Transformation
+    a:hover h2 {
+      color: $TEMP;
+    }
+    a:active h2 {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
     }
 
-    // Page Links Button Mouse-Over Effects WideScreen
-    #pages li {
-        // Text Transformation
-        a:hover h2 {
-            color: $tertiary_black;
-        }
-        a:active h2 {
-            transform: translate(5px, 5px);
-        }
-
-        // Button UI animation
-        a::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background-color: aqua;
-            border-radius: 1em;
-            width: 0;
-            transition: all ease 200ms;
-            z-index: 1;
-        }
-        a:hover::before {
-            width: 100%;
-        }
-        a:active::before {
-            transform: translate(5px, 5px);
-        }
-        a::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            transform: translate(5px, 5px);
-            background-color: purple;
-            border-radius: 1em;
-            width: 0;
-            transition: all ease 200ms;
-            z-index: 0;
-        }
-        a:hover::after {
-            width: 100%;
-        }
+    // Button UI animation
+    a::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $TEMP2;
+      border-radius: 1em;
+      width: 0;
+      transition: all ease 200ms;
+      z-index: 1;
     }
-    
+    a:hover::before {
+      width: 100%;
+    }
+    a:active::before {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
+    a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+      background-color: $TEMP;
+      border-radius: 1em;
+      width: 0;
+      transition: all ease 200ms;
+      z-index: 0;
+    }
+    a:hover::after {
+      width: 100%;
+    }
+  }
 }
-
-
-
 
 @media (max-width: 1250px) {
-    nav {
-        #pages {
-            display: none;
-        }
-        #hamburger {
-            display: block;
-        }
+  nav {
+    #pages {
+      display: none;
     }
-    #dropDownMenu {
-        display: flex;
+    #hamburger {
+      display: block;
     }
+  }
+  #dropDownMenu {
+    display: flex;
+  }
 }
 
 // --------React Transition Group Classes--------
 // Hamburger Butten
 // Enter State
-.hambState-enter #hamburger{
-    span:nth-child(1) {
-        rotate: 0deg;
-    } 
-    span:nth-child(2) {
-        translate: 0 0;
-    }  
-    span:nth-child(3) {
-        rotate: 0deg;
-    }
+.hambState-enter #hamburger {
+  span:nth-child(1) {
+    rotate: 0deg;
+  }
+  span:nth-child(2) {
+    translate: 0 0;
+  }
+  span:nth-child(3) {
+    rotate: 0deg;
+  }
 }
-.hambState-enter-active #hamburger{    
-    span:nth-child(1) {
-        rotate: 45deg;
-        translate: 0 10px;
-    } 
-    span:nth-child(2) {
-        translate: 10px 0;
-        opacity: 0;
-    }  
-    span:nth-child(3) {
-        rotate: -45deg;
-        translate: 0 -10px;
-    }
+.hambState-enter-active #hamburger {
+  span:nth-child(1) {
+    rotate: 45deg;
+    translate: 0 10px;
+  }
+  span:nth-child(2) {
+    translate: 10px 0;
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    rotate: -45deg;
+    translate: 0 -10px;
+  }
 }
-.hambState-enter-done #hamburger{    
-    span:nth-child(1) {
-        rotate: 45deg;
-        translate: 0 10px;
-    } 
-    span:nth-child(2) {
-        translate: 10px 0;
-        opacity: 0;
-    }  
-    span:nth-child(3) {
-        rotate: -45deg;
-        translate: 0 -10px;
-    }
+.hambState-enter-done #hamburger {
+  span:nth-child(1) {
+    rotate: 45deg;
+    translate: 0 10px;
+  }
+  span:nth-child(2) {
+    translate: 10px 0;
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    rotate: -45deg;
+    translate: 0 -10px;
+  }
 }
 // Exit State
-.hambState-exit #hamburger{
-    span:nth-child(1) {
-        rotate: 45deg;
-        translate: 0 10px;
-    } 
-    span:nth-child(2) {
-        translate: 10px 0;
-        opacity: 0;
-    }    
-    span:nth-child(3) {
-        rotate: -45deg;
-        translate: 0 -10px;
-    }
+.hambState-exit #hamburger {
+  span:nth-child(1) {
+    rotate: 45deg;
+    translate: 0 10px;
+  }
+  span:nth-child(2) {
+    translate: 10px 0;
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    rotate: -45deg;
+    translate: 0 -10px;
+  }
 }
-.hambState-exit-active #hamburger{    
-    span:nth-child(1) {
-        rotate: 0deg;
-        translate: 0 0px;
-    } 
-    span:nth-child(2) {
-        translate: 0 0;
-        opacity: 1;
-    }  
-    span:nth-child(3) {
-        rotate: 0deg;
-        translate: 0 0px;
-    }
+.hambState-exit-active #hamburger {
+  span:nth-child(1) {
+    rotate: 0deg;
+    translate: 0 0px;
+  }
+  span:nth-child(2) {
+    translate: 0 0;
+    opacity: 1;
+  }
+  span:nth-child(3) {
+    rotate: 0deg;
+    translate: 0 0px;
+  }
 }
-.hambState-exit-done #hamburger{
-    span:nth-child(1) {
-        rotate: 0deg;
-        translate: 0 0px;
-    } 
-    span:nth-child(2) {
-        translate: 0 0;
-        opacity: 1;
-    }  
-    span:nth-child(3) {
-        rotate: 0deg;
-        translate: 0 0px;
-    }
+.hambState-exit-done #hamburger {
+  span:nth-child(1) {
+    rotate: 0deg;
+    translate: 0 0px;
+  }
+  span:nth-child(2) {
+    translate: 0 0;
+    opacity: 1;
+  }
+  span:nth-child(3) {
+    rotate: 0deg;
+    translate: 0 0px;
+  }
 }
-
 
 // DropDown Menu Transitions
 // Enter
-.dropMenu-enter #dropDownMenu{
-    left: -100%;
+.dropMenu-enter #dropDownMenu {
+  left: -100%;
 }
-.dropMenu-enter-active #dropDownMenu{
-    left: 0;
+.dropMenu-enter-active #dropDownMenu {
+  left: 0;
 }
-.dropMenu-enter-done #dropDownMenu{
-    left: 0;
+.dropMenu-enter-done #dropDownMenu {
+  left: 0;
 }
 // Exit
-.dropMenu-exit #dropDownMenu{
-    left: 0;
+.dropMenu-exit #dropDownMenu {
+  left: 0;
 }
-.dropMenu-exit-active #dropDownMenu{
-    left: -100%;
+.dropMenu-exit-active #dropDownMenu {
+  left: -100%;
 }
-.dropMenu-exit-done #dropDownMenu{
-    left: -100%;
+.dropMenu-exit-done #dropDownMenu {
+  left: -100%;
 }
-
-
