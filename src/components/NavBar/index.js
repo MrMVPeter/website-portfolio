@@ -8,7 +8,7 @@ function NavBar() {
   const [navVerticleState, setNavVerticleState] = useState(false);
 
   return (
-    <>
+    <div id="Navigation">
       <nav>
         {/* Contains Name in Logo Form */}
         <div id="LOGO">
@@ -75,7 +75,7 @@ function NavBar() {
           </ul>
         </div>
       </CSSTransition>
-    </>
+    </div>
   );
 }
 

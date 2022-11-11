@@ -1,24 +1,12 @@
 @use "../../abstracts/" as *;
-// nav {@include css-reset}
 
 nav {
-  // POS & Apperance;
   height: 5em;
-
-  // LAYOUT
   display: flex;
   justify-content: space-around;
   align-items: center;
 
-  #contact {
-    text-decoration: none;
-    h1,
-    p {
-      margin: 0;
-      color: $primary_neon;
-    }
-  }
-
+  // Displays my name
   #LOGO {
     cursor: default;
     user-select: none;
@@ -29,9 +17,9 @@ nav {
     }
   }
 
+  // Links to my many pages WIDESCREEN ONLY
   #pages {
     display: flex;
-    // margin: auto 2em;
     list-style: none;
     li {
       a {
@@ -49,6 +37,7 @@ nav {
     }
   }
 
+  // Hamburger button MOBILE ONLY
   #hamburger {
     display: none;
     user-select: none;
@@ -74,6 +63,7 @@ nav {
   }
 }
 
+// Drop-Down Menu with page links MOBILE ONLY
 #dropDownMenu {
   display: none;
   flex-direction: column;
@@ -85,13 +75,12 @@ nav {
   margin: 0 0;
   padding: 0 0;
   background-color: $tertiary_black;
-
   transition: all $slow_trans;
   li {
     display: flex; // Used flex to center its child
     align-items: center;
     flex-grow: 1;
-    padding: 1em 2em;
+    padding: 1.2em 2em;
     margin: 0 auto;
     a {
       position: relative;
@@ -135,19 +124,12 @@ nav {
       transform: translate($ThreeD_offset, $ThreeD_offset);
       z-index: 0;
     }
-    a:hover {
-      transform: scale(1.5);
-    }
-    a:active::before {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-    }
-    a:active h2 {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-    }
   }
 }
 
+// ----------------------------------------------------------
 // Multiple Hover Animations ONLY for devices that support it
+// ----------------------------------------------------------
 @media (hover: hover) {
   #hamburger:hover {
     span:nth-child(2) {
@@ -156,7 +138,7 @@ nav {
     }
   }
 
-  // Page Links Button Mouse-Over Effects WideScreen
+  // ---------------- WideScreen Page Links ----------------
   #pages li {
     // Text Transformation
     a:hover h2 {
@@ -166,7 +148,7 @@ nav {
       transform: translate($ThreeD_offset, $ThreeD_offset);
     }
 
-    // Button UI animation
+    // Textile Buttun Effects
     a::before {
       content: "";
       display: block;
@@ -206,8 +188,20 @@ nav {
       width: 100%;
     }
   }
+
+  // --------- NarrowScreen Page Textile Effects ---------
+  a:active::before {
+    transform: translate($ThreeD_offset, $ThreeD_offset);
+  }
+  a:hover {
+    transform: scale(1.5);
+  }
+  a:active h2 {
+    transform: translate($ThreeD_offset, $ThreeD_offset);
+  }
 }
 
+// Switches Between WideScreen Mode and NarrowScreen Mode
 @media (max-width: 1250px) {
   nav {
     #pages {
@@ -221,8 +215,9 @@ nav {
     display: flex;
   }
 }
-
-// --------React Transition Group Classes--------
+// ------------------------------------------------------
+// ------------React Transition Group Classes------------
+// ------------------------------------------------------
 // Hamburger Butten
 // Enter State
 .hambState-enter #hamburger {

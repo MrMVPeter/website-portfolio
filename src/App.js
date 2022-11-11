@@ -1,30 +1,19 @@
 import "./App.scss";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import NotFound from "./components/NotFound";
+import FooterBar from "./components/FooterBar";
+import ReactRouterRoutes from "./ReactRouterRoutes";
 
 function App() {
   return (
     <div id="App">
-      {/* Header and NavBar */}
+      {/* Navigation Bar Compoment */}
       <NavBar />
 
-      {/* Main Body for Content to render */}
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/Portfolio" element={<Portfolio />}></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
+      {/* Responsible for rendering page body content */}
+      <ReactRouterRoutes />
 
-      {/* Footer */}
-      <footer>This is my Footer!</footer>
+      {/* Footer Component */}
+      <FooterBar />
     </div>
   );
 }

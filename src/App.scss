@@ -1,7 +1,17 @@
 @use "./abstracts/colors" as c;
 #App {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: c.$primary_black;
+  display: flex;
+  height: 200vh;
+  flex-direction: column;
+  background-color: c.$primary_black;
+  #Navigation {
+    flex-shrink: 0;
+  }
+  .BodyPage {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+  #FooterBar {
+    flex-shrink: 0;
+  }
 }
