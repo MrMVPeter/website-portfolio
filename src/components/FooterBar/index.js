@@ -12,11 +12,41 @@ function FooterBar() {
     <footer id="FooterBar">
       <div id="rows">
         <div id="footer_icons">
-          <img className="foot_icon" alt="Github" src={github} />
-          <img className="foot_icon" alt="Linkedin" src={linkedin} />
-          <img className="foot_icon" alt="Youtube" src={youtube} />
-          <img className="foot_icon" alt="Instagram" src={instagram} />
-          <img className="foot_icon" alt="Email" src={email} />
+          <a
+            href="https://github.com/MrMVPeter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="foot_icon" alt="Github" src={github} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/petergilliam123/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="foot_icon" alt="Linkedin" src={linkedin} />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UC4hcwMSz5FZ8f8t6Hm3h9XA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="foot_icon" alt="Youtube" src={youtube} />
+          </a>
+          <a
+            href="https://github.com/MrMVPeter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="foot_icon" alt="Instagram" src={instagram} />
+          </a>
+          <a
+            href="https://github.com/MrMVPeter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="foot_icon" alt="Email" src={email} />
+          </a>
         </div>
         <div id="footer_btns">
           <Link to="/#">

@@ -19,15 +19,18 @@
         position: relative;
         display: flex;
         justify-content: center;
-        width: 6em;
+        width: 8em;
         padding: 0.5em 0.5em;
         margin: 0.5em 0.5em;
         border: solid;
         border-color: black;
         border-width: 2px;
-        background-color: $green_low_sat;
+        background-color: $magenta;
         text-decoration: none;
         h3 {
+          color: $green;
+          font-size: 110%;
+          font-weight: bold;
           position: relative;
           transition: all $fast_trans;
         }
@@ -84,7 +87,7 @@
         width: 100%;
       }
       a:hover h3 {
-        color: $red_low_sat;
+        color: $magenta_low_sat;
       }
     }
     #footer_message {

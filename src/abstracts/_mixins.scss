@@ -1,0 +1,25 @@
+@use "./colors" as *;
+@mixin html_tags($tag_name, $tab_count: 0) {
+  & {
+    display: flex;
+    flex-direction: column;
+  }
+  &::before {
+    content: "<" + $tag_name + ">";
+    text-align: left;
+    translate: $tab_count * 2em;
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+    color: $green_clear;
+    margin-top: 10px;
+  }
+  &::after {
+    content: "</" + $tag_name + ">";
+    text-align: left;
+    translate: $tab_count * 2em;
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+    color: $green_clear;
+    margin-bottom: 10px;
+  }
+}

@@ -1,1 +1,55 @@
 @use "../../abstracts/" as *;
+
+.BodyPage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 4vw;
+  #text {
+    // display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    margin: 0 4vw;
+    h1 {
+      color: $green;
+      font-size: 5em;
+      // text-align: center;
+      @include html_tags("h1");
+      #name {
+        // display: inline;
+        color: $magenta;
+      }
+    }
+    h2 {
+      color: $green;
+      font-size: 3em;
+      @include html_tags("h2");
+    }
+    p {
+      color: $green;
+      @include html_tags("p");
+    }
+  }
+  #visual {
+    @include html_tags("img");
+    margin: 0 5vw;
+    #hero_pic {
+      height: min(400px, 100vw);
+      border-radius: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .BodyPage {
+    flex-direction: column;
+    #text {
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}
