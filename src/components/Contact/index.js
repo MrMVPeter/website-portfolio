@@ -4,7 +4,9 @@ import "./index.scss";
 function Contact() {
   return (
     <body className="BodyPage">
-      <div>About</div>
+      <div className="TEMP1">
+        <h1>Contact</h1>
+      </div>
     </body>
   );
 }

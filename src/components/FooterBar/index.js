@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
+import resume from "../../assets/pdfs/Resume_Sept_22.docx.pdf";
 import github from "../../assets/icons/github.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import youtube from "../../assets/icons/youtube.png";
@@ -34,32 +35,28 @@ function FooterBar() {
             <img className="foot_icon" alt="Youtube" src={youtube} />
           </a>
           <a
-            href="https://github.com/MrMVPeter"
+            href="https://www.instagram.com/gilliam_pete/"
             target="_blank"
             rel="noreferrer"
           >
             <img className="foot_icon" alt="Instagram" src={instagram} />
           </a>
-          <a
-            href="https://github.com/MrMVPeter"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="/Contact">
             <img className="foot_icon" alt="Email" src={email} />
           </a>
         </div>
         <div id="footer_btns">
-          <Link to="/#">
+          <a href={resume} target="_blank" rel="noreferrer">
             <h3>Resume</h3>
-          </Link>
-          <Link to="/#">
+          </a>
+          <Link to="/Contact">
             <h3>Contact Me</h3>
           </Link>
         </div>
         <div id="footer_message">
-          <a href="/#">
+          <Link to="/Portfolio">
             <p>Designed and Develped by Peter Gilliam</p>
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
