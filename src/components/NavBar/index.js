@@ -12,7 +12,7 @@ function NavBar() {
       <nav>
         {/* Contains Name in Logo Form */}
         <div id="LOGO">
-          <h1> &lt;Peter Gilliam&gt;</h1>
+          <h1> &lt;Peter Gilliam /&gt;</h1>
         </div>
 
         {/* Links to all pages when on widescreen */}
@@ -24,7 +24,10 @@ function NavBar() {
                 <Link /* TODO? Change to NavLink to add some Active State*/
                   to={item.url}
                 >
-                  <h2>{item.title}</h2>
+                  <h2>
+                    <span className="prefix">{index + 1}.</span>
+                    {item.title}
+                  </h2>
                 </Link>
               </li>
             );
@@ -67,7 +70,10 @@ function NavBar() {
                       setNavVerticleState(false);
                     }}
                   >
-                    <h2>{item.title}</h2>
+                    <h2>
+                      <span className="prefix">{index + 1}.</span>
+                      {item.title}
+                    </h2>
                   </Link>
                 </li>
               );

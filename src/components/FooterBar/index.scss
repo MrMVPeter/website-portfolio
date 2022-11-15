@@ -1,0 +1,105 @@
+@use "../../abstracts/index" as *;
+
+#FooterBar {
+  background-color: $green_footer;
+  #rows {
+    display: flex;
+    flex-direction: rows;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.55em auto;
+    .foot_icon {
+      height: 2em;
+      margin: 0 1em;
+      transition: all $med_trans;
+    }
+    #footer_btns {
+      display: flex;
+      a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 6em;
+        padding: 0.5em 0.5em;
+        margin: 0.5em 0.5em;
+        border: solid;
+        border-color: black;
+        border-width: 2px;
+        background-color: $green_low_sat;
+        text-decoration: none;
+        h3 {
+          position: relative;
+          transition: all $fast_trans;
+        }
+      }
+      a::before {
+        content: "";
+        position: absolute;
+        background-color: $blue_low_sat;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        transition: all $med_trans;
+      }
+    }
+    #footer_message {
+      a {
+        text-decoration: none;
+        font-size: 1.25em;
+        position: relative;
+        p {
+          text-align: center;
+          transition: all $fast_trans;
+        }
+      }
+      a::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: $magenta_low_sat;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        translate: 0 450%;
+        width: 0;
+        height: 20%;
+        transition: all $fast_trans;
+      }
+    }
+  }
+}
+@media (hover: hover) {
+  .foot_icon:hover {
+    transform: scale(1.5);
+  }
+  .foot_icon:active {
+    transform: scale(1);
+  }
+  #FooterBar #rows {
+    #footer_btns {
+      a:hover::before {
+        width: 100%;
+      }
+      a:hover h3 {
+        color: $red_low_sat;
+      }
+    }
+    #footer_message {
+      a:hover::before {
+        width: 100%;
+      }
+      a p:hover {
+        color: $magenta_low_sat;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  #rows {
+    flex-direction: column;
+  }
+}

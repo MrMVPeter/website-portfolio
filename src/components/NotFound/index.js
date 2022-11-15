@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function NotFound() {
   return (
-    <div>NotFound...Uh 404</div>
-  )
+    <body className="BodyPage">
+      <div>About</div>
+    </body>
+  );
 }
 
-export default NotFound
+export default NotFound;

@@ -1,9 +1,8 @@
 @use "./abstracts/colors" as c;
 #App {
   display: flex;
-  height: 200vh;
+  height: 100vh;
   flex-direction: column;
-  background-color: c.$primary_black;
   #Navigation {
     flex-shrink: 0;
   }

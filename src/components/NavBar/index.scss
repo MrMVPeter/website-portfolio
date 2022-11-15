@@ -1,5 +1,12 @@
 @use "../../abstracts/" as *;
-
+h1,
+h2,
+p {
+  font-family: "Nanum Gothic Coding", monospace;
+  // font-family: "Dancing Script", cursive;
+  // font-family: "Great Vibes", cursive;
+  // font-family: "Press Start 2P", cursive;
+}
 nav {
   height: 5em;
   display: flex;
@@ -13,7 +20,7 @@ nav {
     h1 {
       font-size: min(3em, 8vw);
       margin: 0;
-      color: $primary_neon;
+      color: $green;
     }
   }
 
@@ -29,9 +36,12 @@ nav {
           transition: all 200ms;
           margin: 0 1em;
           font-size: 1.5em;
-          color: $primary_neon;
+          color: $green;
           position: relative;
           z-index: 2;
+          .prefix {
+            color: $green_clear;
+          }
         }
       }
     }
@@ -54,7 +64,7 @@ nav {
       margin: 6px 0;
       position: relative;
 
-      background-color: $primary_neon;
+      background-color: $green;
       border-radius: 2px;
 
       transform-origin: (width / 2) 0;
@@ -74,7 +84,7 @@ nav {
   width: 100%;
   margin: 0 0;
   padding: 0 0;
-  background-color: $tertiary_black;
+  background-color: $green_clear;
   transition: all $slow_trans;
   li {
     display: flex; // Used flex to center its child
@@ -86,13 +96,16 @@ nav {
       position: relative;
       text-decoration: none;
       transition: all ease $med_trans;
+      font-size: 1.5em;
       h2 {
-        font-size: 1.5em;
-        color: $TEMP;
+        color: $magenta_low_sat;
         position: relative;
         margin: 0.5em 1em;
         transition: all ease $med_trans;
         z-index: 2;
+        .prefix {
+          color: $magenta_clear;
+        }
       }
     }
     a::before {
@@ -103,8 +116,8 @@ nav {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: $TEMP2;
-      border-radius: 2em;
+      background-color: $green_low_sat;
+      border-radius: $border-radius-med;
       width: 100%;
       transition: all ease $med_trans;
       z-index: 1;
@@ -117,8 +130,8 @@ nav {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: $TEMP;
-      border-radius: 2em;
+      background-color: $magenta_low_sat;
+      border-radius: $border-radius-med;
       width: 100%;
       transition: all ease $med_trans;
       transform: translate($ThreeD_offset, $ThreeD_offset);
@@ -134,7 +147,7 @@ nav {
   #hamburger:hover {
     span:nth-child(2) {
       transform: translateX(10px);
-      background-color: $fadded_neon;
+      background-color: adjust-color($color: $green, $alpha: -0.5);
     }
   }
 
@@ -142,7 +155,10 @@ nav {
   #pages li {
     // Text Transformation
     a:hover h2 {
-      color: $TEMP;
+      color: $magenta_low_sat;
+      .prefix {
+        color: $magenta_clear;
+      }
     }
     a:active h2 {
       transform: translate($ThreeD_offset, $ThreeD_offset);
@@ -157,8 +173,8 @@ nav {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: $TEMP2;
-      border-radius: 1em;
+      background-color: $green;
+      border-radius: $border-radius-med;
       width: 0;
       transition: all ease 200ms;
       z-index: 1;
@@ -178,8 +194,8 @@ nav {
       bottom: 0;
       left: 0;
       transform: translate($ThreeD_offset, $ThreeD_offset);
-      background-color: $TEMP;
-      border-radius: 1em;
+      background-color: $magenta_low_sat;
+      border-radius: $border-radius-med;
       width: 0;
       transition: all ease 200ms;
       z-index: 0;
@@ -190,13 +206,13 @@ nav {
   }
 
   // --------- NarrowScreen Page Textile Effects ---------
-  a:active::before {
+  #dropDownMenu a:active::before {
     transform: translate($ThreeD_offset, $ThreeD_offset);
   }
-  a:hover {
+  #dropDownMenu a:hover {
     transform: scale(1.5);
   }
-  a:active h2 {
+  #dropDownMenu a:active h2 {
     transform: translate($ThreeD_offset, $ThreeD_offset);
   }
 }

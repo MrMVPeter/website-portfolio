@@ -3,7 +3,7 @@
   @include css-reset;
 }
 html {
-  background-color: $primary_black;
+  background-color: $green_black;
 }
 body {
   margin: 0;
@@ -12,6 +12,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-width: 350px;
+  width: auto;
 }
 
 code {
@@ -21,9 +24,14 @@ code {
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $tertiary_black;
   border-radius: 4px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
 }

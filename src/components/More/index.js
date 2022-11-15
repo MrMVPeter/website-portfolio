@@ -1,7 +1,6 @@
 import React from "react";
-import "./index.scss";
 
-function Contact() {
+function More() {
   return (
     <body className="BodyPage">
       <div>About</div>
@@ -9,4 +8,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default More;
