@@ -12,7 +12,7 @@ function Home() {
           <span id="name">{textItems["textHeader"][1]}</span>
         </h1>
         <h2>{textItems["textSubHeader"]}</h2>
-        <p>{textItems["textBody"]}</p>
+        {/* <p>{textItems["textBody"]}</p> */}
       </div>
       <div id="visual">
         <img id="hero_pic" src={cartoon_me} alt="Peter Gilliam" />
