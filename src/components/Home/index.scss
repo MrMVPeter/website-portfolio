@@ -26,6 +26,7 @@
       @include html_tags("h2");
     }
     p {
+      font-size: 1.5em;
       color: $green;
       @include html_tags("p");
     }
