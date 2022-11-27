@@ -6,6 +6,8 @@ p {
   // font-family: "Dancing Script", cursive;
   // font-family: "Great Vibes", cursive;
   // font-family: "Press Start 2P", cursive;
+  cursor: default;
+  user-select: none;
 }
 nav {
   height: 5em;
@@ -97,12 +99,14 @@ nav {
       text-decoration: none;
       transition: all ease $med_trans;
       font-size: 1.5em;
+
       h2 {
         color: $magenta_low_sat;
         position: relative;
         margin: 0.5em 1em;
         transition: all ease $med_trans;
         z-index: 2;
+        cursor: pointer;
         .prefix {
           color: $magenta_clear;
         }
@@ -206,6 +210,9 @@ nav {
   }
 
   // --------- NarrowScreen Page Textile Effects ---------
+  #dropDownMenu li a {
+    z-index: 100;
+  }
   #dropDownMenu a:active::before {
     transform: translate($ThreeD_offset, $ThreeD_offset);
   }
