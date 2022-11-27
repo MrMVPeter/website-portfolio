@@ -1,8 +1,14 @@
 @use "../../abstracts/" as *;
 .BodyPage {
   display: flex;
-  .TEMP1 h1 {
+  h1 {
     color: $green;
-    font-size: 15vw;
+    font-size: 3em;
+  }
+  .projectComponent {
+    h1 {
+      color: $green;
+      font-size: 3em;
+    }
   }
 }
