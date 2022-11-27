@@ -1,8 +1,37 @@
 @use "../../abstracts/" as *;
 .BodyPage {
   display: flex;
-  .TEMP1 h1 {
-    color: $green;
-    font-size: 15vw;
+  #timeline {
+    @include html_tags("ul", -0.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 450px;
+    padding: 10px 0;
+    margin: 2em;
+    #timeLineBar {
+      height: 100%;
+      width: 0.25em;
+      background-color: $green;
+      position: absolute;
+      transform: translate(7.75em, -10px);
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      li {
+        display: flex;
+        flex-direction: row;
+        color: $green;
+        h2 {
+          white-space: nowrap;
+        }
+        .barName {
+          translate: 1em;
+        }
+      }
+    }
   }
 }
