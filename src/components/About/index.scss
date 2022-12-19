@@ -1,8 +1,13 @@
 @use "../../abstracts/" as *;
 .BodyPage {
   display: flex;
+  #text {
+    h1 {
+      font-size: min(6em, 18vw);
+    }
+  }
   #timeline {
-    @include html_tags("ul", -0.5);
+    @include html_tags("ul", -0.4);
     display: flex;
     flex-direction: column;
     position: relative;
