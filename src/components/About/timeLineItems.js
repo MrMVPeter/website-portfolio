@@ -5,11 +5,11 @@ const timeLineItems = [
     date: "06/2020-04/2021",
   },
   {
-    name: "Armada High Scool",
+    name: "Armada High School",
     date: "09/2017-05/2021",
   },
   {
-    name: "Phoenix",
+    name: "University of Phoenix",
     date: "10/2021-Present",
   },
   {
@@ -21,7 +21,7 @@ const timeLineItems = [
     date: "11/2021-11/2022",
   },
   {
-    name: "MIT Intern",
+    name: "Manufacturing System Admnin",
     date: "11/2022-Present",
   },
 ];
