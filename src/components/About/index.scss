@@ -4,6 +4,7 @@
   #text {
     padding: 0 1em;
     margin: 0 auto;
+    width: 30vw;
     h1 {
       font-size: min(5em, 18vw);
     }
@@ -72,5 +73,10 @@
   }
   #visual {
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .BodyPage #text {
+    width: auto;
   }
 }
