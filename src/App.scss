@@ -2,12 +2,16 @@
 #App {
   display: flex;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   flex-direction: column;
   #Navigation {
     flex-shrink: 0;
   }
   .BodyPage {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     flex-grow: 1;
     flex-shrink: 0;
   }

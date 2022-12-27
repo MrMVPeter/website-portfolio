@@ -1,8 +1,14 @@
 @use "../../abstracts/" as *;
 .BodyPage {
+  // justify-content: space-around;
   #text {
+    padding: 0 1em;
+    margin: 0 auto;
     h1 {
-      font-size: min(6em, 18vw);
+      font-size: min(5em, 18vw);
+    }
+    h2 {
+      font-size: min(2, 6vw);
     }
   }
   #timeline {
@@ -12,7 +18,7 @@
     position: relative;
     height: 450px;
     padding: 10px 0;
-    margin: 2em;
+    margin: 0 auto;
     ul {
       display: flex;
       flex-direction: column;
@@ -63,5 +69,8 @@
         transform: translate(-7.5px, 460px);
       }
     }
+  }
+  #visual {
+    margin: 0 auto;
   }
 }
