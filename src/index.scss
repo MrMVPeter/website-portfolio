@@ -2,6 +2,18 @@
 * {
   @include css-reset;
 }
+h1,
+h2,
+label,
+p {
+  font-family: "Nanum Gothic Coding", monospace;
+  // font-family: "Dancing Script", cursive;
+  // font-family: "Great Vibes", cursive;
+  // font-family: "Press Start 2P", cursive;
+  cursor: default;
+  user-select: none;
+  color: $green;
+}
 html {
   background-color: $green_black;
 }

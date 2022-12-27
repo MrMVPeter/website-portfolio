@@ -1,11 +1,54 @@
 @use "../../abstracts/" as *;
 .BodyPage {
-  display: flex;
   .TEMP1 h1 {
-    color: $green;
     font-size: 15vw;
   }
-  #googleMapsContainer {
-    width: 50%;
+  #Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    height: 60vh;
+    #ContactBody {
+      display: flex;
+      flex-direction: column;
+      height: 50%;
+      padding: 1em;
+      border: 2px;
+      border-color: $green;
+      border-style: solid;
+      input,
+      textarea {
+        margin: 0 1em 1em 0;
+        background-color: $green_clear;
+        color: $green;
+        border-style: none;
+        resize: none;
+        &:focus {
+          outline-style: none;
+          border-style: solid;
+          border-width: 1px;
+          border-color: $green_low_sat;
+        }
+      }
+      button {
+        height: 3em;
+        width: 11em;
+      }
+    }
+  }
+  #googleMaps {
+    width: 40vw;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .BodyPage {
+    flex-direction: column;
+    #Contact,
+    #googleMaps {
+      width: 100%;
+    }
   }
 }

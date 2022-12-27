@@ -55,6 +55,7 @@
         p {
           text-align: center;
           transition: all $fast_trans;
+          color: $magenta_low_sat;
         }
       }
       a::before {

@@ -7,10 +7,18 @@
     flex-shrink: 0;
   }
   .BodyPage {
+    display: flex;
     flex-grow: 1;
     flex-shrink: 0;
   }
   #FooterBar {
     flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .BodyPage {
+    flex-direction: column;
+    justify-content: center;
   }
 }

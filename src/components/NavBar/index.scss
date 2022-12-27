@@ -1,14 +1,4 @@
 @use "../../abstracts/" as *;
-h1,
-h2,
-p {
-  font-family: "Nanum Gothic Coding", monospace;
-  // font-family: "Dancing Script", cursive;
-  // font-family: "Great Vibes", cursive;
-  // font-family: "Press Start 2P", cursive;
-  cursor: default;
-  user-select: none;
-}
 nav {
   height: 5em;
   display: flex;
@@ -22,7 +12,6 @@ nav {
     h1 {
       font-size: min(3em, 8vw);
       margin: 0;
-      color: $green;
     }
   }
 
@@ -38,7 +27,6 @@ nav {
           transition: all 200ms;
           margin: 0 1em;
           font-size: 1.5em;
-          color: $green;
           position: relative;
           z-index: 2;
           .prefix {

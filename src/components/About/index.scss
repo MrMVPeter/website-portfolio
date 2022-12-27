@@ -1,6 +1,5 @@
 @use "../../abstracts/" as *;
 .BodyPage {
-  display: flex;
   #text {
     h1 {
       font-size: min(6em, 18vw);

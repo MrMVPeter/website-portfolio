@@ -1,33 +1,25 @@
 @use "../../abstracts/" as *;
 
 .BodyPage {
-  display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 4vw;
   #text {
-    // display: flex;
     flex-direction: column;
-    // justify-content: center;
     margin: 0 4vw;
     h1 {
-      color: $green;
       font-size: 5em;
-      // text-align: center;
       @include html_tags("h1");
       #name {
-        // display: inline;
         color: $magenta;
       }
     }
     h2 {
-      color: $green;
       font-size: 3em;
       @include html_tags("h2");
     }
     p {
       font-size: 1.5em;
-      color: $green;
       @include html_tags("p");
     }
   }
@@ -43,7 +35,6 @@
 
 @media screen and (max-width: 1250px) {
   .BodyPage {
-    flex-direction: column;
     #text {
       h1 {
         text-align: center;
