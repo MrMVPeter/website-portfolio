@@ -1,8 +1,9 @@
 # All Pages managed thorugh React-Router, thus sharing the same index.html
 # Thus, all subdirectories should be directed to the same file to be managed
 # by React-Router
-#https://private--peter-gilliam.netlify.app/
-/privatevpn https://www.google.com/ 200
-/*    /index.html   200
+
+# Redirects to A DDNS domain
+/private   https://private--peter-gilliam.netlify.app/   200
+/*         /index.html                                   200
 
 
