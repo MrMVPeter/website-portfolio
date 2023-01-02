@@ -2,8 +2,6 @@
 # Thus, all subdirectories should be directed to the same file to be managed
 # by React-Router
 
-# Redirects to A DDNS domain
-/private   https://private--peter-gilliam.netlify.app/   200
-/*         /index.html                                   200
+/*    /index.html    200
 
 
