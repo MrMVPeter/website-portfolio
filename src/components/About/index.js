@@ -6,9 +6,9 @@ import textItems from "./textItems.js";
 
 function About() {
   return (
-    <body className="BodyPage">
-      <div id="text">
-        <h1>{textItems["textHeader"]}</h1>
+    <body className="bodyPage" id="aboutPage">
+      <div className="text">
+        <h1 className="highlighted">{textItems["textHeader"]}</h1>
         <h2>{textItems["textSubHeader"]}</h2>
         <p>{textItems["textBody"]}</p>
       </div>
@@ -25,8 +25,8 @@ function About() {
           })}
         </ul>
       </div>
-      <div id="visual">
-        <img id="hero_pic" src={cartoon_me} alt="Peter Gilliam" />
+      <div className="visual">
+        <img className="headshot" src={cartoon_me} alt="Peter Gilliam" />
       </div>
     </body>
   );

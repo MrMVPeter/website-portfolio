@@ -1,8 +1,5 @@
 @use "../../abstracts/" as *;
-.BodyPage {
-  .TEMP1 h1 {
-    font-size: 15vw;
-  }
+html body #root #App .bodyPage {
   #Contact {
     display: flex;
     flex-direction: column;
@@ -12,6 +9,7 @@
       font-size: min(15vw, 5em);
     }
     #ContactBody {
+      // @include html_tags("form");
       display: flex;
       flex-direction: column;
       height: 18em;
@@ -55,6 +53,10 @@
             font-weight: 700;
             font-size: 1.25em;
           }
+          p::before,
+          p::after {
+            content: none;
+          }
           img {
             transition: scale $med_trans;
             position: absolute;
@@ -78,7 +80,12 @@
           }
         }
         h2 {
+          font-size: 1em;
           margin: 0 auto;
+        }
+        h2::before,
+        h2::after {
+          content: none;
         }
       }
     }
@@ -90,10 +97,10 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .BodyPage {
+  html body #root #App .bodyPage {
     #Contact,
     #googleMaps {
-      width: 100%;
+      width: 95vw;
       margin: 2em 0;
     }
   }

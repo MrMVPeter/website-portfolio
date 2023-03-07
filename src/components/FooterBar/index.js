@@ -10,9 +10,9 @@ import email from "../../assets/icons/email.png";
 
 function FooterBar() {
   return (
-    <footer id="FooterBar">
+    <footer id="footerBar">
       <div id="rows">
-        <div id="footer_icons">
+        <div id="footer-icons">
           <a
             href="https://github.com/MrMVPeter"
             target="_blank"
@@ -45,7 +45,7 @@ function FooterBar() {
             <img className="foot_icon" alt="Email" src={email} />
           </a>
         </div>
-        <div id="footer_btns">
+        <div id="footer-btns">
           <a href={resume} target="_blank" rel="noreferrer">
             <h3>Resume</h3>
           </a>
@@ -53,7 +53,7 @@ function FooterBar() {
             <h3>Contact Me</h3>
           </Link>
         </div>
-        <div id="footer_message">
+        <div id="footer-message">
           <Link to="/Portfolio">
             <p>Designed and Develped by Peter Gilliam</p>
           </Link>

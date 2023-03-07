@@ -1,16 +1,7 @@
 @use "../../abstracts/" as *;
-.BodyPage {
-  // justify-content: space-around;
-  #text {
-    padding: 0 1em;
-    margin: 0 auto;
-    width: 30vw;
-    h1 {
-      font-size: min(5em, 18vw);
-    }
-    h2 {
-      font-size: min(2, 6vw);
-    }
+html body #root #App #aboutPage {
+  .text {
+    width: 33vw;
   }
   #timeline {
     @include html_tags("ul", -0.4);
@@ -19,12 +10,13 @@
     position: relative;
     height: 450px;
     padding: 10px 0;
-    margin: 0 auto;
+    margin: 3em 0;
     ul {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+      font-size: 0.33em;
       li {
         display: flex;
         flex-direction: row;
@@ -32,9 +24,17 @@
         h2 {
           white-space: nowrap;
         }
-        .barName {
-          transform: translate(1em, 1.5em);
+        h2::before,
+        h2::after {
+          content: none;
         }
+        .barDate {
+          transform: translate(-0.75em, 0em);
+        }
+        .barName {
+          transform: translate(0.5em, 1.5em);
+        }
+        // The Purple Dot for each li
         &::before {
           content: "";
           display: block;
@@ -43,7 +43,7 @@
           height: 10px;
           width: 10px;
           border-radius: 5px;
-          transform: translate(7.58em, 1.1em);
+          transform: translate(21.25em, 2.5em);
         }
       }
     }
@@ -52,7 +52,7 @@
       width: 0.25em;
       background-color: $green;
       position: absolute;
-      transform: translate(7.75em, -10px);
+      transform: translate(7.2em, -10px);
       &::before {
         content: "";
         display: block;
@@ -71,12 +71,15 @@
       }
     }
   }
-  #visual {
-    margin: 0 auto;
-  }
 }
+
 @media screen and (max-width: 1250px) {
-  .BodyPage #text {
-    width: auto;
+  html body #root #App #aboutPage {
+    .text {
+      width: 95vw;
+      h1 {
+        font-size: 4.5em;
+      }
+    }
   }
 }

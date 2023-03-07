@@ -11,7 +11,7 @@ import "./index.scss";
 
 function Portfolio() {
   return (
-    <body className="BodyPage">
+    <body className="bodyPage">
       <h1>Portfolio Page</h1>
       {/* <projectComponent></projectComponent> */}
     </body>

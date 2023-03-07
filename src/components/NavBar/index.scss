@@ -5,33 +5,27 @@ nav {
   justify-content: space-around;
   align-items: center;
 
-  // Displays my name
-  #LOGO {
-    cursor: default;
-    user-select: none;
-    h1 {
-      font-size: min(3em, 8vw);
-      margin: 0;
-    }
+  // My Hero Name
+  #LOGO h1 {
+    font-size: min(3em, 8vw);
+    margin: 0;
   }
 
-  // Links to my many pages WIDESCREEN ONLY
+  // Links to my other pages
   #pages {
     display: flex;
     list-style: none;
-    li {
-      a {
+    li a {
+      position: relative;
+      text-decoration: none;
+      h2 {
+        transition: all 200ms;
+        margin: 0 1em;
+        font-size: 1.5em;
         position: relative;
-        text-decoration: none;
-        h2 {
-          transition: all 200ms;
-          margin: 0 1em;
-          font-size: 1.5em;
-          position: relative;
-          z-index: 2;
-          .prefix {
-            color: $green_clear;
-          }
+        z-index: 2;
+        .prefix {
+          color: $green_clear;
         }
       }
     }
@@ -72,8 +66,8 @@ nav {
   top: 5em;
   left: -100%;
   width: 100%;
-  margin: 0 0;
-  padding: 0 0;
+  margin: 0;
+  padding: 0;
   background-color: $green_clear;
   transition: all $slow_trans;
   li {

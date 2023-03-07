@@ -1,38 +1,100 @@
 @use "./abstracts/index" as *;
+// Avoid Variance in broswer default styles
 * {
   @include css-reset;
 }
-h1,
-h2,
-label,
-p {
-  font-family: "Nanum Gothic Coding", monospace;
-  // font-family: "Dancing Script", cursive;
-  // font-family: "Great Vibes", cursive;
-  // font-family: "Press Start 2P", cursive;
-  cursor: default;
-  user-select: none;
-  color: $green;
-}
+
+// Primary Hierarchy For Global Styles
 html {
   background-color: $green_black;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  body {
+    #root {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-width: 350px;
+      width: auto;
+      h1,
+      h2,
+      label,
+      p {
+        font-family: "Nanum Gothic Coding", monospace;
+        // font-family: "Dancing Script", cursive;
+        // font-family: "Great Vibes", cursive;
+        // font-family: "Press Start 2P", cursive;
+        cursor: default;
+        user-select: none;
+        color: $green;
+      }
+      .highlighted {
+        color: $magenta;
+      }
 
-  min-width: 350px;
-  width: auto;
+      #App {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        #navigation {
+          flex-shrink: 0;
+        }
+        .bodyPage {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-grow: 1;
+          flex-shrink: 0;
+          .text {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+          }
+          h1 {
+            font-size: 5em;
+            @include html_tags("h1");
+          }
+          h2 {
+            font-size: 3em;
+            @include html_tags("h2");
+          }
+          p {
+            font-size: 1.5em;
+            @include html_tags("p");
+          }
+          .visual {
+            @include html_tags("img");
+            .headshot {
+              margin: 0;
+              height: min(400px, 100vw);
+              border-radius: 50%;
+            }
+          }
+        }
+        #footerBar {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+// Secondary Heirarchy for Slim Screen Applications
+@media screen and (max-width: 1250px) {
+  .bodyPage {
+    flex-direction: column;
+    justify-content: center;
+    .text {
+      text-align: center;
+      margin: 0 4vw;
+    }
+  }
 }
+
+// Potential TODOS: code,
 
 ::-webkit-scrollbar {
   width: 8px;

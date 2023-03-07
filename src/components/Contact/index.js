@@ -4,7 +4,7 @@ import paper_plane from "../../assets/icons/paper_plane.svg";
 
 function Contact() {
   return (
-    <body className="BodyPage">
+    <body className="bodyPage">
       <div id="Contact">
         <h1>Contact Me!</h1>
         {/* <h1>peter.n.gilliam@gmail.com</h1> */}
