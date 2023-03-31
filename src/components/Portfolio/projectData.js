@@ -1,28 +1,34 @@
 // This Script contains the timeline information
 const timeLineItems = [
   {
-    name: "Carryout Assembly & QC",
-    date: "06/2020-04/2021",
+    skill: "Python",
+    projects: [
+      {
+        projectName: "PythonProjectName1",
+        projectDate: "PythonProjectDate1",
+        projectDisc: "PythonProjectDisc1",
+      },
+      {
+        projectName: "PythonProjectName2",
+        projectDate: "PythonProjectDate2",
+        projectDisc: "PythonProjectDisc2",
+      },
+    ],
   },
   {
-    name: "Armada High Scool",
-    date: "09/2017-05/2021",
-  },
-  {
-    name: "Phoenix",
-    date: "10/2021-Present",
-  },
-  {
-    name: "Automation Controls Engineer",
-    date: "08/2021-10/2021",
-  },
-  {
-    name: "Assistant General Manager",
-    date: "11/2021-11/2022",
-  },
-  {
-    name: "MIT Intern",
-    date: "11/2022-Present",
+    skill: "C++",
+    projects: [
+      {
+        projectName: "C++ProjectName1",
+        projectDate: "C++ProjectDate1",
+        projectDisc: "C++ProjectDisc1",
+      },
+      {
+        projectName: "C++ProjectName2",
+        projectDate: "C++ProjectDate2",
+        projectDisc: "C++ProjectDisc2",
+      },
+    ],
   },
 ];
 

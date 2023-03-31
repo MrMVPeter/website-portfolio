@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+// import projectComponent from "./projectComponent";
 
 // function projectComponent(props) {
 //   return (
@@ -11,9 +12,10 @@ import "./index.scss";
 
 function Portfolio() {
   return (
-    <body className="bodyPage">
+    <body className="bodyPage" id="portfolioPage">
       <h1>Portfolio Page</h1>
       {/* <projectComponent></projectComponent> */}
+      {/* <Portfolio></Portfolio> */}
     </body>
   );
 }
