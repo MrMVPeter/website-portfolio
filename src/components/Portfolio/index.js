@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-// import projectComponent from "./projectComponent";
+import projectData from "./projectData";
 
 function ProjectTile(props) {
   return (
@@ -13,10 +13,13 @@ function ProjectTile(props) {
 
 function Portfolio() {
   return (
-    <body className="bodyPage" id="portfolioPage">
+    <body className="bodyPage">
       <h1>Portfolio Page</h1>
-      {/* <projectComponent></projectComponent> */}
-      {/* <Portfolio></Portfolio> */}
+      <div id="project_list">
+        {projectData.map((item, index) => {
+          return <ProjectTile />;
+        })}
+      </div>
     </body>
   );
 }
