@@ -23,3 +23,12 @@
     margin-bottom: 10px;
   }
 }
+
+@mixin clear_tags() {
+  &::before {
+    content: none;
+  }
+  &::after {
+    content: none;
+  }
+}
