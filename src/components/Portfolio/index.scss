@@ -1,5 +1,5 @@
 @use "../../abstracts/" as *;
-html body #root #App .bodyPage {
+html body #root #App #portfolio_page {
   flex-direction: column;
   #project_list {
     display: flex;

@@ -13,7 +13,7 @@ function ProjectTile(props) {
 
 function Portfolio() {
   return (
-    <body className="bodyPage">
+    <body className="bodyPage" id="portfolio_page">
       <h1>Portfolio Page</h1>
       <div id="project_list">
         {projectData.map((item, index) => {
