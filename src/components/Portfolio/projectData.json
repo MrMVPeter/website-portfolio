@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Full Stack Web development",
+    "projects": [
+      { "name": "React.js Front End" },
+      { "name": "Node.js Back End" },
+      { "name": "DataBase" }
+    ]
+  },
+  {
+    "name": "C++ / C#",
+    "projects": [{ "name": "FFT Analyzer" }, { "name": "Game Dev" }]
+  },
+  {
+    "name": "Python",
+    "projects": [{ "name": "2D Animation" }, { "name": "Synthesizer" }]
+  },
+  {
+    "name": "Network",
+    "projects": [{ "name": "Network Design" }, { "name": "Network Simulation" }]
+  }
+]

@@ -3,22 +3,37 @@ html body #root #App #portfolio_page {
   flex-direction: column;
   #project_list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    .projectTile {
-      @include html_tags("div");
-      margin: 10px 10px;
+    .project_type {
+      display: flex;
+      flex-direction: column;
       h1 {
-        font-size: 3.5em;
-        @include clear_tags;
+        font-size: 2.5em;
+        color: $magenta;
       }
-      .tileBody {
-        width: 400px;
-        height: 400px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: $green;
+      .project_type_body {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .project_tile {
+          @include html_tags("div");
+          margin: 0 10px;
+          h1 {
+            font-size: 1.25em;
+            color: $green;
+            @include clear_tags;
+          }
+          .tileBody {
+            width: 200px;
+            height: 200px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $green;
+          }
+        }
       }
     }
   }

@@ -4,9 +4,24 @@ import projectData from "./projectData";
 
 function ProjectTile(props) {
   return (
-    <div className="projectTile">
-      <h1>Project Tile</h1>
+    <div className="project_tile">
+      <h1>{props.data.name}</h1>
       <div className="tileBody"></div>
+    </div>
+  );
+}
+
+function ProjecType(props) {
+  return (
+    <div className="project_type">
+      <h1>{props.data.name}</h1>
+      {
+        <div className="project_type_body">
+          {props.data.projects.map((item, index) => {
+            return <ProjectTile data={item} />;
+          })}
+        </div>
+      }
     </div>
   );
 }
@@ -17,7 +32,7 @@ function Portfolio() {
       <h1>Portfolio Page</h1>
       <div id="project_list">
         {projectData.map((item, index) => {
-          return <ProjectTile />;
+          return <ProjecType data={item} />;
         })}
       </div>
     </body>
