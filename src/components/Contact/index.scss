@@ -93,6 +93,9 @@ html body #root #App .bodyPage {
   #googleMaps {
     width: 40vw;
     height: 60vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $green;
   }
 }
 

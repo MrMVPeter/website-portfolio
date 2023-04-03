@@ -1,22 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import paper_plane from "../../assets/icons/paper_plane.svg";
+import { handleSubmit } from "./formHandlers";
 
 function Contact() {
+  // Setup states for the form
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+  });
+
+  // Handles the state data when fields are changed
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  // Turns handle submit function into an event handler
+  const submitForm = (event) => {
+    event.preventDefault();
+    handleSubmit(formData);
+  };
+
   return (
     <body className="bodyPage">
       <div id="Contact">
         <h1>Contact Me!</h1>
         {/* <h1>peter.n.gilliam@gmail.com</h1> */}
-        <form id="ContactBody">
+        <form id="ContactBody" onSubmit={handleSubmit}>
           <label>Full Name:</label>
-          <input></input>
+          <input
+            name="name"
+            value={formData.fullname}
+            onChange={handleChange}
+          />
           <label>Return Email Address:</label>
-          <input></input>
+          <input name="email" value={formData.email} onChange={submitForm} />
           <label>Message:</label>
-          <textarea></textarea>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+          />
           <div id="ContactFinalLine">
-            <button id="submitBtn" onClick={{}}>
+            <button
+              id="submitBtn"
+              type="submit"
+              onClick={() => {
+                alert("Butten Pushed");
+              }}
+            >
               <p>Send It!</p>
               <img src={paper_plane} alt="Paper Plane"></img>
             </button>
