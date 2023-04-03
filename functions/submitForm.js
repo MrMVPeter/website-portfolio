@@ -1,6 +1,8 @@
 const nodemailer = require("nodemailer");
 
 exports.handler = async function(event, context) {
+  console.log("Function started");
+
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -27,13 +29,17 @@ exports.handler = async function(event, context) {
     text: message,
   };
 
+  console.log("About to send email"); // Add this line
+
   try {
     await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully"); // Add this line
     return {
       statusCode: 200,
       body: JSON.stringify({ status: "success", message: "Email Sent" }),
     };
   } catch (error) {
+    console.error("Email sending failed:", error); // Add this line
     return {
       statusCode: 500,
       body: JSON.stringify({
