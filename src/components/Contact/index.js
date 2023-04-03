@@ -27,7 +27,7 @@ function Contact() {
       <div id="Contact">
         <h1>Contact Me!</h1>
         {/* <h1>peter.n.gilliam@gmail.com</h1> */}
-        <form id="ContactBody" onSubmit={handleSubmit}>
+        <form id="ContactBody" onSubmit={submitForm}>
           <label>Full Name:</label>
           <input
             name="name"
