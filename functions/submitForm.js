@@ -23,7 +23,7 @@ exports.handler = async function(event, context) {
   const mailOptions = {
     from: `${fullName} <${email}>`,
     to: process.env.EMAIL_TO,
-    subject: "New message from your portfolio website",
+    subject: `Portfolio Response from ${fullName}`,
     text: message,
   };
 
