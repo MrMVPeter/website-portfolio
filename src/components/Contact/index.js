@@ -35,7 +35,7 @@ function Contact() {
             onChange={handleChange}
           />
           <label>Return Email Address:</label>
-          <input name="email" value={formData.email} onChange={submitForm} />
+          <input name="email" value={formData.email} onChange={handleChange} />
           <label>Message:</label>
           <textarea
             name="message"
