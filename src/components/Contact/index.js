@@ -19,7 +19,6 @@ function Contact() {
   // Turns handle submit function into an event handler
   const submitForm = (event) => {
     event.preventDefault();
-    // console.log(formData);
     handleSubmit(formData);
   };
 

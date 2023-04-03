@@ -1,11 +1,11 @@
 import axios from "axios";
 
 async function handleSubmit(formData) {
-  const { name, email, message } = formData;
+  const { fullName, email, message } = formData;
 
   try {
     const response = await axios.post("/.netlify/functions/submitForm", {
-      name,
+      fullName,
       email,
       message,
     });
