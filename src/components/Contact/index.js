@@ -43,13 +43,7 @@ function Contact() {
             onChange={handleChange}
           />
           <div id="ContactFinalLine">
-            <button
-              id="submitBtn"
-              type="submit"
-              onClick={() => {
-                alert("Butten Pushed");
-              }}
-            >
+            <button id="submitBtn" type="submit">
               <p>Send It!</p>
               <img src={paper_plane} alt="Paper Plane"></img>
             </button>
