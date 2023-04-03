@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async function(event, context) {
   console.log("Function started");
-  alert("Function started");
 
   if (event.httpMethod !== "POST") {
     return {
