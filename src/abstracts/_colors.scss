@@ -10,11 +10,17 @@ $magenta_low_sat: hsla(285, 50%, 50%, 100%);
 $red_low_sat: hsla(0, 60%, 50%, 100%);
 $blue_low_sat: hsla(180, 60%, 50%, 100%);
 
-// High Opacity Group
+// Low Opacity Group
 $green_clear: hsla(105, 60%, 50%, 20%);
 $magenta_clear: hsla(285, 50%, 50%, 20%);
 $red_clear: hsla(0, 40%, 50%, 20%);
 $blue_clear: hsla(180, 60%, 50%, 50%);
+
+// Dark Group
+$green_dark: hsla(105, 60%, 15%, 100%);
+$magenta_dark: hsla(285, 50%, 15%, 100%);
+$red_dark: hsla(0, 40%, 50%, 15%);
+$blue_dark: hsla(180, 60%, 15%, 100%);
 
 // Off black for background
 $green_black: hsla(105, 60%, 5%, 100%);

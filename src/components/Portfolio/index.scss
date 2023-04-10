@@ -29,10 +29,12 @@ html body #root #App #portfolio_page {
           .tileBody {
             width: 200px;
             height: 200px;
+            background-color: $green_low_sat;
             border-style: solid;
-            border-width: 1px;
-            border-color: $green;
             border-radius: 5px;
+            border-color: black;
+            border-width: 2px;
+            box-shadow: 3px 3px 1px $green_dark;
           }
         }
       }
