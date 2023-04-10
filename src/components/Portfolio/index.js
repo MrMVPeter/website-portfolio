@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import projectData from "./projectData";
-import react from "../../assets/icons/react.png";
+// import react from "../../assets/icons/react.png";
 
 function ProjectTile(props) {
   return (
