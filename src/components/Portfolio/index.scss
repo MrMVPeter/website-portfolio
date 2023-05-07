@@ -27,14 +27,22 @@ html body #root #App #portfolio_page {
             @include clear_tags;
           }
           .tileBody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 200px;
             height: 200px;
             background-color: $green_low_sat;
             border-style: solid;
-            border-radius: 5px;
+            border-radius: 10px;
             border-color: black;
             border-width: 2px;
             box-shadow: 3px 3px 1px $green_dark;
+            .project_icon {
+              width: 98%;
+              height: 98%;
+              border-radius: 10px;
+            }
           }
         }
       }

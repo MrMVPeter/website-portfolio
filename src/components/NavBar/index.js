@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import MenuItems from "./MenuItems";
+import MenuItems from "./MenuItems.json";
 
 function NavBar() {
   const [navVerticleState, setNavVerticleState] = useState(false);

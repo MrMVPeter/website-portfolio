@@ -1,13 +1,19 @@
 import React from "react";
 import "./index.scss";
 import projectData from "./projectData";
-// import react from "../../assets/icons/react.png";
+import iconMapping from "./iconMapping";
 
 function ProjectTile(props) {
+  const iconSrc = iconMapping[props.data.id];
+
   return (
     <div className="project_tile">
       <h1>{props.data.name}</h1>
-      <div className="tileBody"></div>
+      <div className="tileBody">
+        {iconSrc && (
+          <img className="project_icon" src={iconSrc} alt="Project Icon" />
+        )}
+      </div>
     </div>
   );
 }

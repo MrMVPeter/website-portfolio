@@ -2,21 +2,30 @@
   {
     "name": "Full Stack Web development",
     "projects": [
-      { "name": "React.js Front End" },
-      { "name": "Node.js Back End" },
-      { "name": "DataBase" }
+      { "name": "React.js Front End", "id": 1 },
+      { "name": "Node.js Back End", "id": 2 },
+      { "name": "DataBase", "id": 99 }
     ]
   },
   {
     "name": "C++ / C#",
-    "projects": [{ "name": "FFT Analyzer" }, { "name": "Game Dev" }]
+    "projects": [
+      { "name": "FFT Analyzer", "id": 3 },
+      { "name": "Game Dev", "id": 4 }
+    ]
   },
   {
     "name": "Python",
-    "projects": [{ "name": "2D Animation" }, { "name": "Synthesizer" }]
+    "projects": [
+      { "name": "2D Animation", "id": 5 },
+      { "name": "Synthesizer", "id": 99 }
+    ]
   },
   {
     "name": "Network",
-    "projects": [{ "name": "Network Design" }, { "name": "Network Simulation" }]
+    "projects": [
+      { "name": "Network Design", "id": 99 },
+      { "name": "Network Simulation", "id": 99 }
+    ]
   }
 ]
