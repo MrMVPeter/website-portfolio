@@ -13,3 +13,4 @@ The website has a simple contact form, but you can also send an email to peter.n
 - DataBase Login
 - Differentiate Between Front End and Back End
 - Advertise Open-Sorce project contributions
+- Clear Contact Form upon submission
