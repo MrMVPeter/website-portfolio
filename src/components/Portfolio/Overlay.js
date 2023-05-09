@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 import "./Overlay.scss";
 
 function Overlay() {
   const [showOverlay, setShowOverlay] = useState(false);
 
-  const handleTogleOverlay = () => {
-    setShowOverlay(!showOverlay);
-  };
+  // const handleTogleOverlay = () => {
+  //   setShowOverlay(!showOverlay);
+  // };
 
   return (
     <div id="overlay">
