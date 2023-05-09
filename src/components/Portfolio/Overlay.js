@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Overlay.scss";
 
 function Overlay() {
-  const [showOverlay, setShowOverlay] = useState(false);
+  // const [showOverlay, setShowOverlay] = useState(false);
 
   // const handleTogleOverlay = () => {
   //   setShowOverlay(!showOverlay);

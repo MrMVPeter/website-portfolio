@@ -15,7 +15,7 @@ function ProjectTile(props) {
           <img className="project_icon" src={iconSrc} alt="Project Icon" />
         )}
         <div className="tile_overlay">
-          <a>
+          <a href="/Home">
             <h2>Read More</h2>
           </a>
         </div>
