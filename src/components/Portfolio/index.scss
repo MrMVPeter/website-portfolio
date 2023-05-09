@@ -27,6 +27,7 @@ html body #root #App #portfolio_page {
             @include clear_tags;
           }
           .tileBody {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,17 +36,107 @@ html body #root #App #portfolio_page {
             background-color: $green_low_sat;
             border-style: solid;
             border-radius: 10px;
-            border-color: black;
-            border-width: 2px;
             box-shadow: 3px 3px 1px $green_dark;
             .project_icon {
               width: 98%;
               height: 98%;
               border-radius: 10px;
             }
+            .tile_overlay {
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+              background-color: $green_clear;
+              opacity: 0;
+              transition: all ease $med_trans;
+              a {
+                width: 100%;
+                height: 100%;
+              }
+            }
           }
         }
       }
+    }
+  }
+}
+
+// ----------------------------------------------------------
+// Multiple Hover Animations ONLY for devices that support it
+// ----------------------------------------------------------
+
+@media (hover: hover) {
+  html
+    body
+    #root
+    #App
+    #portfolio_page
+    #project_list
+    .project_type
+    .project_type_body
+    .project_tile
+    .tileBody {
+    .tile_overlay {
+      a {
+        transition: all ease $med_trans;
+        display: flex;
+        align-items: center;
+      }
+      a h2 {
+        @include clear_tags;
+        color: $magenta;
+        position: relative;
+        text-align: center;
+        transition: all ease $med_trans;
+        z-index: 2;
+      }
+      a::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: $green_low_sat;
+        border-radius: 10px;
+        height: 50%;
+        width: 80%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: all ease $med_trans;
+        margin: auto auto;
+        z-index: 1;
+      }
+      a::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: $magenta_low_sat;
+        border-radius: 10px;
+        height: 50%;
+        width: 80%;
+        margin: auto auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translate($ThreeD_offset, $ThreeD_offset);
+        z-index: 0;
+      }
+      a:active {
+        h2 {
+          transform: translate($ThreeD_offset, $ThreeD_offset);
+        }
+        &::before {
+          transform: translate($ThreeD_offset, $ThreeD_offset);
+        }
+      }
+    }
+    .tile_overlay:hover {
+      opacity: 1;
     }
   }
 }

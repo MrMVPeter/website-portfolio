@@ -11,3 +11,5 @@ The website has a simple contact form, but you can also send an email to peter.n
 ## TODO Features
 
 - DataBase Login
+- Differentiate Between Front End and Back End
+- Advertise Open-Sorce project contributions

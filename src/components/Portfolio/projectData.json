@@ -1,11 +1,11 @@
 [
   {
+    "name": "Certifications",
+    "projects": [{ "name": "CompTIA A+", "id": 6 }]
+  },
+  {
     "name": "Full Stack Web development",
-    "projects": [
-      { "name": "React.js Front End", "id": 1 },
-      { "name": "Node.js Back End", "id": 2 },
-      { "name": "DataBase", "id": 99 }
-    ]
+    "projects": [{ "name": "React.js Portfolio", "id": 1 }]
   },
   {
     "name": "C++ / C#",

@@ -2,6 +2,9 @@
 html body #root #App #aboutPage {
   .text {
     width: 33vw;
+    p {
+      font-size: 1.25em;
+    }
   }
   #timeline {
     @include html_tags("ul", -0.4);

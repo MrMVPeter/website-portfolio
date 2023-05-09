@@ -4,6 +4,7 @@ import projectIcon2 from "../../assets/icons/Portfolio/node_icon.webp";
 import projectIcon3 from "../../assets/icons/Portfolio/FFT_icon.png";
 import projectIcon4 from "../../assets/icons/Portfolio/unity_icon.png";
 import projectIcon5 from "../../assets/icons/Portfolio/manim.png";
+import projectIcon6 from "../../assets/icons/Portfolio/comptia.png";
 import projectIcon99 from "../../assets/icons/Portfolio/tiktok.png";
 // ... other images
 
@@ -14,6 +15,7 @@ const iconMapping = {
   3: projectIcon3,
   4: projectIcon4,
   5: projectIcon5,
+  6: projectIcon6,
   99: projectIcon99,
 };
 

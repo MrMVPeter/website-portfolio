@@ -1,0 +1,8 @@
+@use "../../abstracts/" as *;
+
+html body #root #App #portfolio_page #overlay {
+  h1 {
+    color: purple;
+    display: none;
+  }
+}
