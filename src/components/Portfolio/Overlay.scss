@@ -1,12 +1,13 @@
 @use "../../abstracts/" as *;
 
-html body #root #App #portfolio_page .screen_overlay {
+.screen_overlay {
   height: 100%;
   width: 100%;
   background-color: $magenta_semi_clear;
   position: fixed;
   transition: all ease $med_trans;
   top: 0;
+  display: none;
   z-index: 99;
   h1 {
     margin: auto;
