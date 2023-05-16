@@ -34,7 +34,8 @@ function NavBar() {
           })}
         </ul>
 
-        {/* Mobile Only! Hambuger Menu */}
+        {/* Mobile Only! Hambuger Menu Icon Transition
+        Hamburger Icon <==> X button */}
         <CSSTransition
           in={navVerticleState}
           timeout={600}
@@ -57,6 +58,7 @@ function NavBar() {
         </CSSTransition>
       </nav>
 
+      {/* Slide Vertical Navigation to and from off-screen */}
       <CSSTransition in={navVerticleState} timeout={600} classNames="dropMenu">
         <div>
           <ul id="dropDownMenu">

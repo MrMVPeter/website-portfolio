@@ -20,6 +20,7 @@ function Contact() {
   const submitForm = (event) => {
     event.preventDefault();
     handleSubmit(formData);
+    setFormData({ fullName: "", email: "", message: "" });
   };
 
   return (

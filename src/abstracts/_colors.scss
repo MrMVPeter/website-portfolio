@@ -10,11 +10,17 @@ $magenta_low_sat: hsla(285, 50%, 50%, 100%);
 $red_low_sat: hsla(0, 60%, 50%, 100%);
 $blue_low_sat: hsla(180, 60%, 50%, 100%);
 
+// Semi Opacity Group
+$magenta_semi_clear: hsla(285, 50%, 50%, 50%);
+
 // Low Opacity Group
 $green_clear: hsla(105, 60%, 50%, 20%);
 $magenta_clear: hsla(285, 50%, 50%, 20%);
 $red_clear: hsla(0, 40%, 50%, 20%);
 $blue_clear: hsla(180, 60%, 50%, 50%);
+
+// Very Low Opacity Group
+$green_very_clear: hsla(105, 60%, 50%, 10%);
 
 // Dark Group
 $green_dark: hsla(105, 60%, 15%, 100%);
@@ -47,7 +53,3 @@ $tertiary_black: rgb(100, 100, 100);
 
 // FADDED
 $fadded_neon: rgba(51, 255, 128, 0.6);
-
-// TEMPERARY COLORS
-$TEMP: purple;
-$TEMP2: aqua;

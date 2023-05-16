@@ -67,9 +67,10 @@ nav {
   left: -100%;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 0 10px 0;
   background-color: $green_clear;
   transition: all $slow_trans;
+  z-index: 99;
   li {
     display: flex; // Used flex to center its child
     align-items: center;
@@ -311,6 +312,7 @@ nav {
 // DropDown Menu Transitions
 // Enter
 .dropMenu-enter #dropDownMenu {
+  display: flex;
   left: -100%;
 }
 .dropMenu-enter-active #dropDownMenu {
@@ -328,4 +330,5 @@ nav {
 }
 .dropMenu-exit-done #dropDownMenu {
   left: -100%;
+  display: none;
 }

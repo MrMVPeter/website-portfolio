@@ -1,8 +1,49 @@
 @use "../../abstracts/" as *;
 
-html body #root #App #portfolio_page #overlay {
+html body #root #App #portfolio_page .screen_overlay {
+  height: 100%;
+  width: 100%;
+  background-color: $magenta_semi_clear;
+  position: fixed;
+  transition: all ease $med_trans;
+  top: 0;
+  z-index: 99;
   h1 {
-    color: purple;
-    display: none;
+    margin: auto;
   }
+}
+
+// DropDown Menu Transitions
+// Enter
+.showOverlay-enter {
+  display: flex;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.showOverlay-enter-active {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.showOverlay-enter-done {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+// Exit
+.showOverlay-exit {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.showOverlay-exit-active {
+  display: flex;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.showOverlay-exit-done {
+  transform: translateY(100%);
+  display: none;
+  opacity: 0;
 }

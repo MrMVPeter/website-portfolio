@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import "./index.scss";
 import projectData from "./projectData";
 import iconMapping from "./iconMapping";
-import Overlay from "./Overlay.js";
+import Overlay from "./Overlay";
 
 // Creates a tile with header, icon, and overlay
 function ProjectTile(props) {
@@ -15,9 +16,13 @@ function ProjectTile(props) {
           <img className="project_icon" src={iconSrc} alt="Project Icon" />
         )}
         <div className="tile_overlay">
-          <a href="/Home">
+          <button
+            onClick={() => {
+              props.handleToggleShowOverlay();
+            }}
+          >
             <h2>Read More</h2>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -32,7 +37,12 @@ function ProjecType(props) {
       {
         <div className="project_type_body">
           {props.data.projects.map((item, index) => {
-            return <ProjectTile data={item} />;
+            return (
+              <ProjectTile
+                data={item}
+                handleToggleShowOverlay={props.handleToggleShowOverlay}
+              />
+            );
           })}
         </div>
       }
@@ -42,13 +52,26 @@ function ProjecType(props) {
 
 // Primary Exported Function
 function Portfolio() {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const handleToggleShowOverlay = () => {
+    setShowOverlay((prevState) => !prevState);
+  };
+
   return (
     <body className="bodyPage" id="portfolio_page">
-      <Overlay />
+      <CSSTransition in={showOverlay} timeout={600} classNames="showOverlay">
+        <Overlay handleClose={handleToggleShowOverlay} />
+      </CSSTransition>
       <h1>Portfolio Page</h1>
       <div id="project_list">
         {projectData.map((item, index) => {
-          return <ProjecType data={item} />;
+          return (
+            <ProjecType
+              data={item}
+              handleToggleShowOverlay={handleToggleShowOverlay}
+            />
+          );
         })}
       </div>
     </body>
