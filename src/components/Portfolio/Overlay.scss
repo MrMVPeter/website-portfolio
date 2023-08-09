@@ -1,16 +1,31 @@
 @use "../../abstracts/" as *;
 
 .screen_overlay {
-  height: 100%;
+  // height: 100%;
   width: 100%;
   background-color: $magenta_semi_clear;
-  position: fixed;
+  position: absolute;
   transition: all ease $med_trans;
   top: 0;
+  flex-direction: column;
   display: none;
   z-index: 99;
-  h1 {
-    margin: auto;
+  #screen_overlay_body {
+    background-color: $magenta_low_sat;
+    margin: 50px 5vw;
+    border-radius: 50px;
+    h1 {
+      margin: auto 5vw;
+    }
+    p {
+      margin: auto 5vw;
+    }
+    img {
+      display: flex;
+      width: 25vw;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
   }
 }
 

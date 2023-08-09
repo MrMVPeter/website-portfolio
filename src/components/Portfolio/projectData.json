@@ -1,31 +1,75 @@
 [
   {
     "name": "Credentials",
-    "projects": [{ "name": "CompTIA A+", "id": 6 }]
+    "projects": [
+      {
+        "name": "CompTIA A+",
+        "id": 6,
+        "description": "The CompTIA A+ certification is a globally recognized credential designed for IT professionals. Earning this certification demonstrates a strong foundational knowledge in IT operational roles and technical support, proving the individual's capability in troubleshooting and solving problems.",
+        "relevant_technologies": "Hardware, Networking, Mobile Devices, Windows OS, Hardware & Networking Troubleshooting"
+      }
+    ]
   },
   {
-    "name": "Full Stack Web development",
-    "projects": [{ "name": "React.js Portfolio", "id": 1 }]
+    "name": "Web development",
+    "projects": [
+      {
+        "name": "React.js Portfolio",
+        "id": 1,
+        "description": "Welcome to my professional portfolio website! Designed and developed to showcase my skills, projects, and experiences, this site serves as a window into my journey as a developer. Every pixel has been meticulously crafted to ensure that you get a glimpse of not just my technical abilities, but also my design sensibility and attention to detail.",
+        "relevant_technologies": "Frontend Development, Responsive Design, SEO Optimization, Performance Optimization"
+      }
+    ]
   },
   {
     "name": "C++ / C#",
     "projects": [
-      { "name": "FFT Analyzer", "id": 3 },
-      { "name": "Game Dev", "id": 4 }
+      {
+        "name": "FFT Analyzer",
+        "id": 3,
+        "description": "The FFT Analyzer is a dynamic tool, meticulously designed to allow users to craft and combine sine waves. Through its interactive UI, users can seamlessly apply the FFT (Fast Fourier Transform) algorithm, translating these waves into a frequency domain representation. Beyond mere analysis, the project comes alive with the added capability to playback the crafted waveforms, delivering an aural experience that corresponds to the visual representation. It exemplifies a harmonious blend of algorithmic complexity with user-friendly interfaces.",
+        "relevant_technologies": "C-Sharp Programming, UI/UX Design, Algorithm Implementation, Audio Processing, Signal Processing"
+      },
+      {
+        "name": "Game Dev",
+        "id": 4,
+        "description": "Embarking on a journey through the realm of interactive entertainment, this series of video games represents more than just play—it's a deliberate exploration into the depths of C# programming. Using Unity as the canvas, each game is a manifestation of advanced C# concepts, algorithms, and best practices. Whether it's scripting intricate game mechanics, shaping character behaviors, or orchestrating dynamic environments, each title stands as a testament to a rigorous pursuit of C# mastery through practical application in game development.",
+        "relevant_technologies": "Unity Game Engine, C# Scripting"
+      }
     ]
   },
   {
     "name": "Python",
     "projects": [
-      { "name": "2D Animation", "id": 5 },
-      { "name": "Synthesizer", "id": 99 }
+      {
+        "name": "2D Animation",
+        "id": 5,
+        "description": "Drawing the bridge between visual storytelling and complex mathematical concepts, my YouTube channel showcases a series of captivating 2D animations. Each explainer dives deep into a mathematical topic, making it accessible and engaging through dynamic visuals. Designed meticulously using Manim—a Python-based animation engine—every video is a harmonious blend of creativity and programming precision, aiming to both educate and entertain the audience.",
+        "relevant_technologies": "Manim (Python Animation Library), Python, YouTube Media Creation"
+      },
+      {
+        "name": "Synthesizer",
+        "id": 7,
+        "description": "Diving deep into the world of sound synthesis, I crafted a fundamental synthesizer in Python capable of generating intricate sound patterns. With the power to create pure sine waves and their multifaceted combinations, this project was not just about producing sounds but understanding their underlying mathematics. Whether it's the simple elegance of a single sine wave or the complexity of their combinations, the synthesizer offers an auditory experience, all encapsulated in easily shareable WAV files.",
+        "relevant_technologies": "Python, WAV File Generation, Sound Synthesis Techniques"
+      }
     ]
   },
   {
     "name": "Network",
     "projects": [
-      { "name": "Network Design", "id": 99 },
-      { "name": "Network Simulation", "id": 99 }
+      {
+        "name": "Network Design",
+        "id": 8,
+        "description": "In a mission-critical environment, I was tasked with the overhaul of a server rack that was both inefficient and problematic due to its initial installation. Recognizing the imperative of minimizing downtime and ensuring seamless operation, I meticulously planned and executed a comprehensive reconfiguration and rewiring. The result was a streamlined, accessible, and maintainable system, significantly reducing potential issues and paving the way for smoother future expansions and maintenance.",
+        "relevant_technologies": "Server Rack Hardware, Cable Management Tools, Network Configuration, System Diagnostics"
+      },
+      {
+        "name": "HomeLAB",
+        "id": 9,
+        "description": "Embarking on an extensive project, I conceptualized, designed, and established a robust HomeLAB system. From handpicking the hardware components and constructing the machine to mastering advanced software configurations, my holistic approach ensured optimal performance and unparalleled security. The system not only showcases my technical versatility but also stands as a testament to my dedication to creating resilient and efficient IT solutions.",
+        "relevant_technologies": "Computer Hardware Assembly, TrueNAS Scale, ZFS Filesystem, Software RAID Configuration, Domain & DNS Managment, SSL Configuration & Management, Security Best Practices, Advanced Networking"
+      }
     ]
   }
 ]

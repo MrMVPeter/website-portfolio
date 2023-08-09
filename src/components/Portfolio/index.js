@@ -18,7 +18,8 @@ function ProjectTile(props) {
         <div className="tile_overlay">
           <button
             onClick={() => {
-              props.handleToggleShowOverlay();
+              props.handleToggleShowOverlay(props.data);
+              window.scrollTo(0, 0);
             }}
           >
             <h2>Read More</h2>
@@ -54,15 +55,24 @@ function ProjecType(props) {
 function Portfolio() {
   const [showOverlay, setShowOverlay] = useState(false);
 
-  const handleToggleShowOverlay = () => {
+  const [selectedOverlay, setSelectedOverlay] = useState(0);
+
+  const handleToggleShowOverlay = (project = 0) => {
+    setSelectedOverlay(project);
     setShowOverlay((prevState) => !prevState);
   };
 
   return (
     <body className="bodyPage" id="portfolio_page">
+      {/* Overlay Element */}
       <CSSTransition in={showOverlay} timeout={600} classNames="showOverlay">
-        <Overlay handleClose={handleToggleShowOverlay} />
+        <Overlay
+          handleClose={handleToggleShowOverlay}
+          project={selectedOverlay}
+        />
       </CSSTransition>
+
+      {/* Persistant Portfolio Page */}
       <h1>Portfolio Page</h1>
       <div id="project_list">
         {projectData.map((item, index) => {
