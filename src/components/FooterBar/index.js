@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import resume from "../../assets/pdfs/Resume_Sept_22.docx.pdf";
+import resume from "../../assets/pdfs/resume.pdf";
 import github from "../../assets/icons/github.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import youtube from "../../assets/icons/youtube.png";
