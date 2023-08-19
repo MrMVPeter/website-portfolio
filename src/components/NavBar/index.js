@@ -1,52 +1,45 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./index.scss";
 import MenuItems from "./MenuItems.json";
 
 function NavBar() {
-  const [navVerticleState, setNavVerticleState] = useState(false);
+  const [verticalNavOverlayActive, setVerticalNavOverlayActive] =
+    useState(false);
 
   return (
     <div id="navigation">
       <nav>
-        {/* Contains Name in Logo Form */}
-        <div id="LOGO">
-          <h1> &lt;Peter Gilliam /&gt;</h1>
-        </div>
+        {/* Hero-style Name */}
+        <h1> &lt;Peter Gilliam /&gt;</h1>
 
-        {/* Links to all pages when on widescreen */}
-        <ul id="pages">
-          {/* Dynamically Creats Page links from MenuItemsRight */}
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link /* TODO? Change to NavLink to add some Active State*/
-                  to={item.url}
-                >
-                  <h2>
-                    <span className="prefix">{index + 1}.</span>
-                    {item.title}
-                  </h2>
-                </Link>
-              </li>
-            );
-          })}
+        {/* WIDESCREEN-ONLY NavLinks to other pages */}
+        <ul>
+          {/* Pull all pages from MenuItems.json */}
+          {MenuItems.map((item) => (
+            <li key={item.id}>
+              <NavLink to={item.url}>
+                <h2>
+                  <span className="prefix">{item.id + 1}.</span>
+                  {item.title}
+                </h2>
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
-        {/* Mobile Only! Hambuger Menu Icon Transition
-        Hamburger Icon <==> X button */}
+        {/* NARROWSCREEN-ONLY Hamburger icon */}
         <CSSTransition
-          in={navVerticleState}
+          in={verticalNavOverlayActive}
           timeout={600}
           classNames="hambState"
         >
           <div>
-            {/* Hamburger Link for Responsive layout */}
             <button
               id="hamburger"
               onClick={() => {
-                setNavVerticleState(!navVerticleState);
+                setVerticalNavOverlayActive(!verticalNavOverlayActive);
               }}
             >
               {/* Lines */}
@@ -58,28 +51,30 @@ function NavBar() {
         </CSSTransition>
       </nav>
 
-      {/* Slide Vertical Navigation to and from off-screen */}
-      <CSSTransition in={navVerticleState} timeout={600} classNames="dropMenu">
+      {/* NARROWSCREEN-ONLY Navigation overlay */}
+      <CSSTransition
+        in={verticalNavOverlayActive}
+        timeout={600}
+        classNames="dropMenu"
+      >
         <div>
           <ul id="dropDownMenu">
-            {/* Dynamically Creats Page links from MenuItemsRight */}
-            {MenuItems.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link /* TODO? Change to NavLink to add some Active State*/
-                    to={item.url}
-                    onClick={() => {
-                      setNavVerticleState(false);
-                    }}
-                  >
-                    <h2>
-                      <span className="prefix">{index + 1}.</span>
-                      {item.title}
-                    </h2>
-                  </Link>
-                </li>
-              );
-            })}
+            {/* Pull all pages from MenuItems.json */}
+            {MenuItems.map((item) => (
+              <li key={item.id}>
+                <NavLink
+                  to={item.url}
+                  onClick={() => {
+                    setVerticalNavOverlayActive(false);
+                  }}
+                >
+                  <h2>
+                    <span className="prefix">{item.id + 1}.</span>
+                    {item.title}
+                  </h2>
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </CSSTransition>

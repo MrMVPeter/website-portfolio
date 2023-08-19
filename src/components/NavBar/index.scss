@@ -6,27 +6,23 @@ nav {
   align-items: center;
 
   // My Hero Name
-  #LOGO h1 {
+  h1 {
     font-size: min(3em, 8vw);
     margin: 0;
   }
 
   // Links to my other pages
-  #pages {
+  ul {
     display: flex;
-    list-style: none;
     li a {
       position: relative;
-      text-decoration: none;
       h2 {
-        transition: all 200ms;
+        transition: all $fast_trans;
         margin: 0 1em;
         font-size: 1.5em;
         position: relative;
-        z-index: 2;
-        .prefix {
-          color: $green_clear;
-        }
+        z-index: 3;
+        cursor: pointer;
       }
     }
   }
@@ -37,7 +33,6 @@ nav {
     user-select: none;
     appearance: none;
     border: none;
-    outline: none;
     background: none;
     margin: 0 2em;
     cursor: pointer;
@@ -47,12 +42,10 @@ nav {
       height: 4px;
       margin: 6px 0;
       position: relative;
-
       background-color: $green;
       border-radius: 2px;
-
       transform-origin: (width / 2) 0;
-      transition-duration: 200ms;
+      transition-duration: $fast_trans;
     }
   }
 }
@@ -62,7 +55,6 @@ nav {
   display: none;
   flex-direction: column;
   position: absolute;
-  list-style: none;
   top: 5em;
   left: -100%;
   width: 100%;
@@ -72,17 +64,13 @@ nav {
   transition: all $slow_trans;
   z-index: 99;
   li {
-    display: flex; // Used flex to center its child
-    align-items: center;
-    flex-grow: 1;
+    display: flex;
     padding: 1.2em 2em;
     margin: 0 auto;
     a {
       position: relative;
-      text-decoration: none;
       transition: all ease $med_trans;
       font-size: 1.5em;
-
       h2 {
         color: $magenta_low_sat;
         position: relative;
@@ -95,20 +83,7 @@ nav {
         }
       }
     }
-    a::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $green_low_sat;
-      border-radius: $border-radius-med;
-      width: 100%;
-      transition: all ease $med_trans;
-      z-index: 1;
-    }
+    a::before,
     a::after {
       content: "";
       display: block;
@@ -117,11 +92,16 @@ nav {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: $magenta_low_sat;
       border-radius: $border-radius-med;
       width: 100%;
       transition: all ease $med_trans;
-      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
+    a::before {
+      background-color: $green_low_sat;
+      z-index: 1;
+    }
+    a::after {
+      background-color: $magenta_low_sat;
       z-index: 0;
     }
   }
@@ -139,7 +119,7 @@ nav {
   }
 
   // ---------------- WideScreen Page Links ----------------
-  #pages li {
+  ul li {
     // Text Transformation
     a:hover h2 {
       color: $magenta_low_sat;
@@ -147,31 +127,8 @@ nav {
         color: $magenta_clear;
       }
     }
-    a:active h2 {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-    }
 
-    // Textile Buttun Effects
-    a::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $green;
-      border-radius: $border-radius-med;
-      width: 0;
-      transition: all ease 200ms;
-      z-index: 1;
-    }
-    a:hover::before {
-      width: 100%;
-    }
-    a:active::before {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-    }
+    a::before,
     a::after {
       content: "";
       display: block;
@@ -180,15 +137,26 @@ nav {
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-      background-color: $magenta_low_sat;
       border-radius: $border-radius-med;
       width: 0;
       transition: all ease 200ms;
-      z-index: 0;
     }
+    a:hover::before,
     a:hover::after {
       width: 100%;
+    }
+    a:active::before,
+    a:active h2 {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
+    a::before {
+      background-color: $green;
+      z-index: 1;
+    }
+    a::after {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+      background-color: $magenta_low_sat;
+      z-index: 0;
     }
   }
 
@@ -207,10 +175,10 @@ nav {
   }
 }
 
-// Switches Between WideScreen Mode and NarrowScreen Mode
+// Switches Between Banner NavLinks vs Hamburger
 @media (max-width: 1250px) {
   nav {
-    #pages {
+    ul {
       display: none;
     }
     #hamburger {

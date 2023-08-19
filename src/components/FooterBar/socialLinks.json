@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Github",
+    "linkURL": "https://github.com/MrMVPeter",
+    "target": "_blank"
+  },
+  {
+    "id": 2,
+    "name": "LinkedIn",
+    "linkURL": "https://www.linkedin.com/in/petergilliam123/",
+    "target": "_blank"
+  },
+  {
+    "id": 3,
+    "name": "YouTube",
+    "linkURL": "https://www.youtube.com/channel/UC4hcwMSz5FZ8f8t6Hm3h9XA",
+    "target": "_blank"
+  },
+  {
+    "id": 4,
+    "name": "Instagram",
+    "linkURL": "https://www.instagram.com/gilliam_pete/",
+    "target": "_blank"
+  },
+  { "id": 5, "name": "Email", "linkURL": "/Contact", "target": "_self" }
+]

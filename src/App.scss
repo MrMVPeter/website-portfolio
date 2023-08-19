@@ -1,1 +1,47 @@
-// Place holder style sheet for future Apps
+@use "./abstracts/index" as *;
+#App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  .bodyPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    flex-shrink: 0;
+    h1 {
+      font-size: 5em;
+      @include html_tags("h1");
+    }
+    h2 {
+      font-size: 3em;
+      @include html_tags("h2");
+    }
+    p {
+      font-size: 1.5em;
+      @include html_tags("p");
+    }
+    .visual {
+      @include html_tags("img");
+      .headshot {
+        margin: 0;
+        height: min(400px, 100vw);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Secondary Heirarchy for Slim Screen Applications
+@media screen and (max-width: 1250px) {
+  .bodyPage {
+    flex-direction: column;
+    justify-content: center;
+    .text {
+      text-align: center;
+      margin: 0 4vw;
+    }
+  }
+}

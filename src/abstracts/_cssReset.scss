@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@use "./colors" as *;
+
 @mixin css-reset {
   html,
   body,
@@ -90,6 +92,7 @@
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    text-decoration: none;
   }
   /* HTML5 display-role reset for older browsers */
   article,
@@ -126,5 +129,50 @@
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  // Setting global defaults for the website
+  // --------------------------------------------------------------------------
+  html {
+    background-color: $green_black;
+    user-select: none;
+  }
+
+  h1,
+  h2,
+  label,
+  p {
+    font-family: "Nanum Gothic Coding", monospace;
+    // font-family: "Dancing Script", cursive;
+    // font-family: "Great Vibes", cursive;
+    // font-family: "Press Start 2P", cursive;
+    cursor: default;
+    user-select: none;
+    color: $green;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .highlighted {
+    color: $magenta;
+  }
+  .prefix {
+    color: $green_clear;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $tertiary_black;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
   }
 }

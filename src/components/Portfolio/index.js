@@ -37,7 +37,7 @@ function ProjecType(props) {
       <h1>{props.data.name}</h1>
       {
         <div className="project_type_body">
-          {props.data.projects.map((item, index) => {
+          {props.data.projects.map((item) => {
             return (
               <ProjectTile
                 data={item}
