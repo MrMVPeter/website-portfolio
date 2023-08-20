@@ -24,11 +24,10 @@ function Contact() {
   };
 
   return (
-    <body className="bodyPage">
-      <div id="Contact">
-        <h1>Contact Me!</h1>
-        {/* <h1>peter.n.gilliam@gmail.com</h1> */}
-        <form id="ContactBody" onSubmit={submitForm}>
+    <div className="bodyPage">
+      <div className="contact">
+        <h1 className="highlighted">Contact Me!</h1>
+        <form className="contact-body" onSubmit={submitForm}>
           <label>Full Name:</label>
           <input
             name="fullName"
@@ -43,8 +42,8 @@ function Contact() {
             value={formData.message}
             onChange={handleChange}
           />
-          <div id="ContactFinalLine">
-            <button id="submitBtn" type="submit">
+          <div className="contact-final-line">
+            <button className="submit-btn" type="submit">
               <p>Send It!</p>
               <img src={paper_plane} alt="Paper Plane"></img>
             </button>
@@ -63,7 +62,7 @@ function Contact() {
         referrerpolicy="no-referrer-when-downgrade"
         title="Google Maps Embeded"
       ></iframe>
-    </body>
+    </div>
   );
 }
 

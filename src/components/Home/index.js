@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+// import "./index.scss";
 import textItems from "./textItems";
 import cartoon_me from "../../assets/images/real_me.jpg";
 

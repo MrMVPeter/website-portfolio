@@ -1,83 +1,94 @@
 @use "../../abstracts/" as *;
-html body #root #App #aboutPage {
+#aboutPage {
   .text {
     width: 33vw;
     p {
       font-size: 1.25em;
     }
   }
-  #timeline {
-    @include html_tags("ul", -0.4);
+}
+
+#timeline {
+  @include html_tags("ul", -0.4);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 450px;
+  padding: 10px 0;
+  margin: 3em 0;
+
+  ul {
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 450px;
-    padding: 10px 0;
-    margin: 3em 0;
-    ul {
+    justify-content: space-between;
+    height: 100%;
+    font-size: 0.33em;
+
+    li {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      font-size: 0.33em;
-      li {
-        display: flex;
-        flex-direction: row;
-        color: $green;
-        h2 {
-          white-space: nowrap;
-        }
-        h2::before,
-        h2::after {
+      flex-direction: row;
+      color: $green;
+
+      h2 {
+        white-space: nowrap;
+        &::before,
+        &::after {
           content: none;
         }
-        .barDate {
-          transform: translate(-0.75em, 0em);
-        }
-        .barName {
-          transform: translate(0.5em, 1.5em);
-        }
-        // The Purple Dot for each li
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          background-color: $magenta;
-          height: 10px;
-          width: 10px;
-          border-radius: 5px;
-          transform: translate(21.25em, 2.5em);
-        }
       }
-    }
-    #timeLineBar {
-      height: 100%;
-      width: 0.25em;
-      background-color: $green;
-      position: absolute;
-      transform: translate(7.2em, -10px);
+
+      .barDate {
+        transform: translate(-0.75em, 0em);
+        @include clear_tags();
+      }
+
+      .barName {
+        transform: translate(0.5em, 1.5em);
+        @include clear_tags();
+      }
+
       &::before {
         content: "";
         display: block;
-        background-color: $green;
-        height: 5px;
-        width: 20px;
-        transform: translate(-7.5px);
-      }
-      &::after {
-        content: "";
-        display: block;
-        background-color: $green;
-        height: 5px;
-        width: 20px;
-        transform: translate(-7.5px, 460px);
+        position: absolute;
+        background-color: $magenta;
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        transform: translate(21.25em, 2.5em);
       }
     }
   }
 }
 
+#timeLineBar {
+  height: 100%;
+  width: 0.25em;
+  background-color: $green;
+  position: absolute;
+  transform: translate(7.2em, -10px);
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    background-color: $green;
+    height: 5px;
+    width: 20px;
+    transform: translate(-7.5px);
+  }
+
+  &::before {
+    transform: translate(-7.5px);
+  }
+
+  &::after {
+    transform: translate(-7.5px, 460px);
+  }
+}
+
 @media screen and (max-width: 1250px) {
-  html body #root #App #aboutPage {
+  #aboutPage {
     .text {
       width: 95vw;
       h1 {

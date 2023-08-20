@@ -1,110 +1,108 @@
 @use "../../abstracts/" as *;
-html body #root #App .bodyPage {
-  #Contact {
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+
+  h1 {
+    font-size: min(15vw, 5em);
+  }
+
+  .contact-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 40vw;
-    h1 {
-      font-size: min(15vw, 5em);
+    height: 18em;
+    padding: 1em;
+    border: 2px solid $green;
+
+    label {
+      font-size: 1.25em;
     }
-    #ContactBody {
-      // @include html_tags("form");
+
+    input,
+    textarea {
+      margin: 0 1em 1em 0;
+      background-color: $green_clear;
+      color: $green;
+      border-style: none;
+      resize: none;
+      height: 2em;
+      font-size: 1em;
+
+      &:focus {
+        outline-style: none;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $green_low_sat;
+      }
+    }
+
+    textarea {
+      flex-grow: 1;
+    }
+
+    .contact-final-line {
       display: flex;
-      flex-direction: column;
-      height: 18em;
-      padding: 1em;
-      border: 2px;
-      border-color: $green;
-      border-style: solid;
-      label {
-        font-size: 1.25em;
-      }
-      input,
-      textarea {
-        margin: 0 1em 1em 0;
-        background-color: $green_clear;
-        color: $green;
-        border-style: none;
-        resize: none;
-        height: 2em;
-        font-size: 1em;
-        &:focus {
-          outline-style: none;
-          border-style: solid;
-          border-width: 1px;
-          border-color: $green_low_sat;
+      align-items: center;
+
+      .submit-btn {
+        height: 3em;
+        width: 11em;
+        background-color: $magenta;
+        border: none;
+        border-radius: $border-radius-rount;
+        p {
+          transition: scale $med_trans;
+          font-weight: 700;
+          font-size: 1.25em;
         }
-      }
-      textarea {
-        flex-grow: 1;
-      }
-      #ContactFinalLine {
-        display: flex;
-        align-items: center;
-        #submitBtn {
-          height: 3em;
-          width: 11em;
-          background-color: $magenta;
-          border: none;
-          border-radius: $border-radius-rount;
-          p {
-            transition: scale $med_trans;
-            font-weight: 700;
-            font-size: 1.25em;
-          }
-          p::before,
-          p::after {
-            content: none;
-          }
-          img {
-            transition: scale $med_trans;
-            position: absolute;
-            rotate: 45deg;
-            transform: translate(-2.75em, -5em);
-            transform-origin: -5em -0.5em;
-            // transform-origin: center;
-            height: 2em;
-            scale: 0;
-          }
-          &:hover {
-            p {
-              scale: 0;
-            }
-            img {
-              scale: 1;
-            }
-            & & h2 {
-              color: aqua;
-            }
-          }
-        }
-        h2 {
-          font-size: 1em;
-          margin: 0 auto;
-        }
-        h2::before,
-        h2::after {
+        p::before,
+        p::after {
           content: none;
         }
+
+        img {
+          transition: scale $med_trans;
+          position: absolute;
+          transform: translate(1.5em, -5.5em) rotate(45deg);
+          transform-origin: -5em -0.5em;
+          height: 2em;
+          scale: 0;
+        }
+        &:hover {
+          p {
+            scale: 0;
+          }
+          img {
+            scale: 1;
+          }
+        }
+      }
+      h2 {
+        font-size: 1em;
+        margin: 0 auto;
+      }
+      h2::before,
+      h2::after {
+        content: none;
       }
     }
   }
-  #googleMaps {
-    width: 40vw;
-    height: 60vh;
-    border-style: solid;
-    border-width: 2px;
-    border-color: $green;
-  }
+}
+#googleMaps {
+  width: 40vw;
+  height: 60vh;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $green;
 }
 
 @media screen and (max-width: 1250px) {
-  html body #root #App .bodyPage {
-    #Contact,
-    #googleMaps {
-      width: 95vw;
-      margin: 2em 0;
-    }
+  .contact,
+  #googleMaps {
+    width: 95vw;
+    margin: 2em 0;
   }
 }

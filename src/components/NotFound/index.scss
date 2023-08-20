@@ -1,8 +1,15 @@
 @use "../../abstracts/" as *;
-.BodyPage {
+#not-found-page {
   display: flex;
-  .TEMP1 h1 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  h1 {
     color: $green;
     font-size: 15vw;
+  }
+  p {
+    margin: 1em 0 2em 0;
   }
 }
