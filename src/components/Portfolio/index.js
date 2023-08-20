@@ -5,7 +5,7 @@ import projectData from "./projectData";
 import iconMapping from "./iconMapping";
 import Overlay from "./Overlay";
 
-// Creates a tile with header, icon, and overlay
+// Renders a project Tile
 function ProjectTile(props) {
   const iconSrc = iconMapping[props.data.id];
   return (
@@ -31,7 +31,7 @@ function ProjectTile(props) {
 }
 
 // Creates rows and fills them with tiles
-function ProjecType(props) {
+function ProjectType(props) {
   return (
     <div className="project_type">
       <h1>{props.data.name}</h1>
@@ -77,7 +77,7 @@ function Portfolio() {
       <div id="project_list">
         {projectData.map((item, index) => {
           return (
-            <ProjecType
+            <ProjectType
               data={item}
               handleToggleShowOverlay={handleToggleShowOverlay}
             />
