@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio App",
-  "name": "Portfolio React App",
+  "short_name": "Peter Gilliam",
+  "name": "Peter's React App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
+      "src": "alt_favicon.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "og_image.png",
+      "type": "image/png",
+      "sizes": "650x650"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#091405"
 }
