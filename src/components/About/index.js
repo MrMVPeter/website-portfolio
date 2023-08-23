@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-import cartoon_me from "../../assets/images/real_me.jpg";
+import cartoon_me from "../../assets/images/real_me.webp";
 import timeLineItems from "./timeLineItems";
 import textItems from "./textItems.js";
 import { Helmet } from "react-helmet";
