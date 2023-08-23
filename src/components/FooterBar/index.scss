@@ -29,8 +29,9 @@ footer {
       background-color: $magenta;
       h3 {
         color: $green;
+        font-family: "Kani", sans-serif;
         font-size: 125%;
-        font-weight: bold;
+        font-weight: 600;
         position: relative;
         transition: all $fast_trans;
       }
