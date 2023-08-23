@@ -5,6 +5,7 @@
     font-size: min(3em, 8vw);
     margin: 0;
   }
+
   h2 {
     transition: all $fast_trans;
     margin: 0 1em;
@@ -14,72 +15,67 @@
     z-index: 3;
     cursor: pointer;
   }
-  ul {
-    display: flex;
-    li {
-      display: flex;
 
-      // Button Underneath Effect
-      a {
-        position: relative;
-        &::before,
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          border-radius: $border-radius-med;
-          width: 0;
-          transition: all ease $fast_trans;
-        }
-        &::before {
-          background-color: $green_low_sat;
-          z-index: 1;
-        }
-        &::after {
-          background-color: $magenta_low_sat;
-          z-index: 0;
-          transform: translate($ThreeD_offset, $ThreeD_offset);
-        }
+  // Button Underneath Effect
+  a {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: $border-radius-med;
+      width: 0;
+      transition: all ease $fast_trans;
+    }
+    &::before {
+      background-color: $green_low_sat;
+      z-index: 1;
+    }
+    &::after {
+      background-color: $magenta_low_sat;
+      z-index: 0;
+      transform: translate($ThreeD_offset, $ThreeD_offset);
+    }
 
-        // Push Button Down Effect
-        &:active::before,
-        &:active h2 {
-          transform: translate($ThreeD_offset, $ThreeD_offset);
-        }
-      }
+    // Push Button Down Effect
+    &:active::before,
+    &:active h2 {
+      transform: translate($ThreeD_offset, $ThreeD_offset);
     }
   }
 
+  // Top Nav Bar Area
   nav {
     display: flex;
     height: 5em;
     justify-content: space-around;
     align-items: center;
+  }
 
-    // Hamburger button Narrow Screen ONLY
-    #hamburger {
-      display: none;
-      user-select: none;
-      appearance: none;
-      border: none;
-      background: none;
-      margin: 0 2em;
-      cursor: pointer;
-      span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin: 6px 0;
-        position: relative;
-        background-color: $green;
-        border-radius: 2px;
-        transform-origin: (width / 2) 0;
-        transition-duration: $fast_trans;
-      }
+  // Hamburger button Narrow Screen ONLY
+  #hamburger {
+    display: none;
+    user-select: none;
+    appearance: none;
+    border: none;
+    background: none;
+    margin: 0 2em;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin: 6px 0;
+      position: relative;
+      background-color: $green;
+      border-radius: 2px;
+      transform-origin: (width / 2) 0;
+      transition-duration: $fast_trans;
     }
   }
 
@@ -99,27 +95,24 @@
     li {
       padding: 1.2em 2em;
       margin: 0 auto;
-      a {
-        position: relative;
-        z-index: 100;
-        transition: all ease $fast_trans;
-        &::before,
-        &::after {
-          border-radius: $border-radius-round;
-          width: 100%;
-        }
-        h2 {
-          font-size: 2.4em;
-          color: $magenta_low_sat;
-          position: relative;
-          margin: 0.5em 1em;
-          transition: all ease $med_trans;
-          z-index: 2;
-          cursor: pointer;
-          .prefix {
-            color: $magenta_clear;
-          }
-        }
+    }
+    a {
+      z-index: 100;
+      transition: all ease $fast_trans;
+      &::before,
+      &::after {
+        border-radius: $border-radius-round;
+        width: 100%;
+      }
+    }
+    h2 {
+      font-size: 2.4em;
+      color: $magenta_low_sat;
+      margin: 0.5em 1em;
+      transition: all ease $med_trans;
+      z-index: 2;
+      .prefix {
+        color: $magenta_clear;
       }
     }
   }
@@ -138,18 +131,21 @@
     }
 
     // ---------------- WideScreen Page Links ----------------
-    ul li {
-      a:hover h2 {
+    a {
+      &:hover h2 {
         color: $magenta_low_sat;
         .prefix {
           color: $magenta_clear;
         }
       }
-      a:hover::before,
-      a:hover::after {
+
+      &:hover::before,
+      &:hover::after {
         width: 100%;
       }
     }
+
+    // ---------------- NarrowScreen Page Links ----------------
     #dropDownMenu li a:hover {
       transform: scale(1.5);
     }

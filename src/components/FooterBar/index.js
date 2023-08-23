@@ -13,14 +13,14 @@ function FooterBar() {
         {socialLinks.map((item) => (
           <a key={item.id} href={item.linkURL} target={item.target}>
             <img
-              className="footer_icon"
+              className="footerIcons"
               src={iconSrc(item.id)}
               alt={item.name}
             />
           </a>
         ))}
       </div>
-      <div id="footer-btns">
+      <div id="footerResumeAndContact">
         <a href={resume} target="_blank" rel="noreferrer">
           <h3>Resume</h3>
         </a>
@@ -28,7 +28,7 @@ function FooterBar() {
           <h3>Contact Me</h3>
         </NavLink>
       </div>
-      <div id="footer-message">
+      <div id="footerMessage">
         <NavLink to="/Portfolio">
           <p>Designed and Develped by Peter Gilliam</p>
         </NavLink>

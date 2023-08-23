@@ -6,15 +6,32 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+
+  h3 {
+    color: $green;
+    font-family: "Kanit", sans-serif;
+    font-size: 125%;
+    font-weight: 600;
+    position: relative;
+    transition: all $fast_trans;
+  }
+
+  p {
+    font-weight: bold;
+    text-align: center;
+    transition: all $fast_trans;
+    color: $magenta_low_sat;
+  }
+
   // Social Media Icons
-  .footer_icon {
+  .footerIcons {
     height: 2em;
     margin: 0.55em 1em;
     transition: all $med_trans;
   }
 
   // Resume and Contact Buttons
-  #footer-btns {
+  #footerResumeAndContact {
     display: flex;
     a {
       position: relative;
@@ -27,14 +44,6 @@ footer {
       border-color: black;
       border-width: 2px;
       background-color: $magenta;
-      h3 {
-        color: $green;
-        font-family: "Kanit", sans-serif;
-        font-size: 125%;
-        font-weight: 600;
-        position: relative;
-        transition: all $fast_trans;
-      }
     }
     // Hover animation overlay
     a::before {
@@ -51,18 +60,12 @@ footer {
   }
 
   // Short text giving myself credit
-  #footer-message {
+  #footerMessage {
     margin: 0.5em 0;
     a {
       text-decoration: none;
       font-size: 1.25em;
       position: relative;
-      p {
-        font-weight: bold;
-        text-align: center;
-        transition: all $fast_trans;
-        color: $magenta_low_sat;
-      }
     }
     a::before {
       content: "";
@@ -83,29 +86,32 @@ footer {
 
 @media (hover: hover) {
   // Social Media Icons
-  .footer_icon:hover {
-    transform: scale(1.5);
+  .footerIcons {
+    &:hover {
+      transform: scale(1.5);
+    }
+    &:active {
+      transform: scale(1);
+    }
   }
-  .footer_icon:active {
-    transform: scale(1);
-  }
+
   // Resume and Contact Page
-  #footer-btns {
-    a:hover::before {
+  #footerResumeAndContact a {
+    &:hover::before {
       width: 100%;
     }
-    a:hover h3 {
+    &:hover h3 {
       color: $magenta_low_sat;
     }
   }
+
   // Final Credit Message
-  #footer-message {
-    a:hover::before {
-      width: 100%;
-    }
+  #footerMessage a:hover::before {
+    width: 100%;
   }
 }
 
+// Narrow Screen Switch
 @media (max-width: 1250px) {
   footer {
     flex-direction: column;

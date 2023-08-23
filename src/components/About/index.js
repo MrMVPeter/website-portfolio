@@ -25,12 +25,12 @@ function About() {
       </Helmet>
 
       <body className="bodyPage" id="aboutPage">
-        <div className="text">
+        <div id="textArea">
           <h1 className="highlighted">{textItems["textHeader"]}</h1>
           <h2>{textItems["textSubHeader"]}</h2>
           <p>{textItems["textBody"]}</p>
         </div>
-        <div id="timeline">
+        <div id="timelineSection">
           <div id="timeLineBar"></div>
           <ul>
             {timeLineItems.map((item, index) => {

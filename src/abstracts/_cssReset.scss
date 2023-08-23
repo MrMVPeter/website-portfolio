@@ -153,6 +153,11 @@
     cursor: pointer;
   }
 
+  ul,
+  li {
+    display: flex;
+  }
+
   .highlighted {
     color: $magenta;
   }

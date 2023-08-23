@@ -1,108 +1,121 @@
 @use "../../abstracts/" as *;
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 40vw;
+#contactPage {
+  // Encompases the entire Form Section
+  #contactFormSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+  }
 
   h1 {
     font-size: min(15vw, 5em);
   }
 
-  .contact-body {
+  h2 {
+    font-size: 1em;
+    margin: 0 auto;
+    @include clear_tags();
+  }
+
+  p {
+    transition: scale $med_trans;
+    font-weight: 700;
+    font-size: 1.25em;
+    @include clear_tags();
+  }
+
+  // Where Inputs Starts
+  form {
     display: flex;
     flex-direction: column;
     height: 18em;
     padding: 1em;
     border: 2px solid $green;
+  }
 
-    label {
-      font-size: 1.25em;
+  label {
+    font-size: 1.25em;
+  }
+
+  input,
+  textarea {
+    margin: 0 1em 1em 0;
+    background-color: $green_clear;
+    color: $green;
+    border-style: none;
+    resize: none;
+    height: 2em;
+    font-size: 1em;
+
+    &:focus {
+      outline-style: none;
+      border-style: solid;
+      border-width: 1px;
+      border-color: $green_low_sat;
     }
+  }
 
-    input,
-    textarea {
-      margin: 0 1em 1em 0;
-      background-color: $green_clear;
-      color: $green;
-      border-style: none;
-      resize: none;
-      height: 2em;
-      font-size: 1em;
+  textarea {
+    flex-grow: 1;
+  }
 
-      &:focus {
-        outline-style: none;
-        border-style: solid;
-        border-width: 1px;
-        border-color: $green_low_sat;
+  #contactSubmitSection {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    height: 3em;
+    width: 11em;
+    background-color: $magenta;
+    border: none;
+    border-radius: $border-radius-round;
+    &:active {
+      p {
+        scale: 0;
       }
-    }
-
-    textarea {
-      flex-grow: 1;
-    }
-
-    .contact-final-line {
-      display: flex;
-      align-items: center;
-
-      .submit-btn {
-        height: 3em;
-        width: 11em;
-        background-color: $magenta;
-        border: none;
-        border-radius: $border-radius-round;
-        p {
-          transition: scale $med_trans;
-          font-weight: 700;
-          font-size: 1.25em;
-        }
-        p::before,
-        p::after {
-          content: none;
-        }
-
-        img {
-          transition: scale $med_trans;
-          position: absolute;
-          transform: translate(1.5em, -5.5em) rotate(45deg);
-          transform-origin: -5em -0.5em;
-          height: 2em;
-          scale: 0;
-        }
-        &:hover {
-          p {
-            scale: 0;
-          }
-          img {
-            scale: 1;
-          }
-        }
-      }
-      h2 {
-        font-size: 1em;
-        margin: 0 auto;
-      }
-      h2::before,
-      h2::after {
-        content: none;
+      img {
+        scale: 1;
       }
     }
   }
-}
-#googleMaps {
-  width: 40vw;
-  height: 60vh;
-  border-style: solid;
-  border-width: 2px;
-  border-color: $green;
+
+  img {
+    transition: scale $med_trans;
+    position: absolute;
+    transform: translate(1.5em, -5.5em) rotate(45deg);
+    transform-origin: -5em -0.5em;
+    height: 2em;
+    scale: 0;
+  }
+
+  iframe {
+    width: 40vw;
+    height: 60vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $green;
+  }
 }
 
 @media screen and (max-width: 1250px) {
-  .contact,
-  #googleMaps {
-    width: 95vw;
-    margin: 2em 0;
+  #contactPage {
+    #contactFormSection,
+    iframe {
+      width: 95vw;
+      margin: 2em 0;
+    }
+  }
+}
+
+@media (hover: hover) {
+  #contactSubmitSection button:hover {
+    p {
+      scale: 0;
+    }
+    img {
+      scale: 1;
+    }
   }
 }
