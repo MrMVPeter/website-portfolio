@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
+import { Helmet } from "react-helmet";
 import "./index.scss";
 import projectData from "./projectData";
 import iconMapping from "./iconMapping";
@@ -63,28 +64,46 @@ function Portfolio() {
   };
 
   return (
-    <body className="bodyPage" id="portfolio_page">
-      {/* Overlay Element */}
-      <CSSTransition in={showOverlay} timeout={600} classNames="showOverlay">
-        <Overlay
-          handleClose={handleToggleShowOverlay}
-          project={selectedOverlay}
+    <>
+      <Helmet>
+        <title>Portfolio | Peter Gilliam's Projects and Web Apps</title>
+        <meta
+          name="description"
+          content="Explore a collection of Peter Gilliam's web projects, apps, and other tech-related works."
         />
-      </CSSTransition>
+        <meta
+          property="og:title"
+          content="Portfolio | Dive into Peter Gilliam's Tech Projects"
+        />
+        <meta
+          property="og:description"
+          content="A showcase of web apps, projects, and other tech endeavors by Peter Gilliam."
+        />
+      </Helmet>
 
-      {/* Persistant Portfolio Page */}
-      <h1>Portfolio Page</h1>
-      <div id="project_list">
-        {projectData.map((item, index) => {
-          return (
-            <ProjectType
-              data={item}
-              handleToggleShowOverlay={handleToggleShowOverlay}
-            />
-          );
-        })}
-      </div>
-    </body>
+      <body className="bodyPage" id="portfolio_page">
+        {/* Overlay Element */}
+        <CSSTransition in={showOverlay} timeout={600} classNames="showOverlay">
+          <Overlay
+            handleClose={handleToggleShowOverlay}
+            project={selectedOverlay}
+          />
+        </CSSTransition>
+
+        {/* Persistant Portfolio Page */}
+        <h1>Portfolio Page</h1>
+        <div id="project_list">
+          {projectData.map((item, index) => {
+            return (
+              <ProjectType
+                data={item}
+                handleToggleShowOverlay={handleToggleShowOverlay}
+              />
+            );
+          })}
+        </div>
+      </body>
+    </>
   );
 }
 
