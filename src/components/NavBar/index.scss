@@ -1,108 +1,126 @@
 @use "../../abstracts/" as *;
-nav {
-  height: 5em;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  // My Hero Name
+#navigation {
+  // Global Navigation Styles
   h1 {
     font-size: min(3em, 8vw);
     margin: 0;
   }
-
-  // Links to my other pages
+  h2 {
+    transition: all $fast_trans;
+    margin: 0 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+  }
   ul {
     display: flex;
-    li a {
-      position: relative;
-      h2 {
-        transition: all $fast_trans;
-        margin: 0 1em;
-        font-size: 1.5em;
-        position: relative;
-        z-index: 3;
-        cursor: pointer;
-      }
-    }
-  }
+    li {
+      display: flex;
 
-  // Hamburger button MOBILE ONLY
-  #hamburger {
-    display: none;
-    user-select: none;
-    appearance: none;
-    border: none;
-    background: none;
-    margin: 0 2em;
-    cursor: pointer;
-    span {
-      display: block;
-      width: 33px;
-      height: 4px;
-      margin: 6px 0;
-      position: relative;
-      background-color: $green;
-      border-radius: 2px;
-      transform-origin: (width / 2) 0;
-      transition-duration: $fast_trans;
-    }
-  }
-}
-
-// Drop-Down Menu with page links MOBILE ONLY
-#dropDownMenu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 5em;
-  left: -100%;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 10px 0;
-  background-color: $green_clear;
-  transition: all $slow_trans;
-  z-index: 99;
-  li {
-    display: flex;
-    padding: 1.2em 2em;
-    margin: 0 auto;
-    a {
-      position: relative;
-      transition: all ease $med_trans;
-      font-size: 1.5em;
-      h2 {
-        color: $magenta_low_sat;
+      // Button Underneath Effect
+      a {
         position: relative;
-        margin: 0.5em 1em;
-        transition: all ease $med_trans;
-        z-index: 2;
-        cursor: pointer;
-        .prefix {
-          color: $magenta_clear;
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: $border-radius-med;
+          width: 0;
+          transition: all ease $fast_trans;
+        }
+        &::before {
+          background-color: $green_low_sat;
+          z-index: 1;
+        }
+        &::after {
+          background-color: $magenta_low_sat;
+          z-index: 0;
+          transform: translate($ThreeD_offset, $ThreeD_offset);
+        }
+
+        // Push Button Down Effect
+        &:active::before,
+        &:active h2 {
+          transform: translate($ThreeD_offset, $ThreeD_offset);
         }
       }
     }
-    a::before,
-    a::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: $border-radius-med;
-      width: 100%;
-      transition: all ease $med_trans;
+  }
+
+  nav {
+    display: flex;
+    height: 5em;
+    justify-content: space-around;
+    align-items: center;
+
+    // Hamburger button Narrow Screen ONLY
+    #hamburger {
+      display: none;
+      user-select: none;
+      appearance: none;
+      border: none;
+      background: none;
+      margin: 0 2em;
+      cursor: pointer;
+      span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin: 6px 0;
+        position: relative;
+        background-color: $green;
+        border-radius: 2px;
+        transform-origin: (width / 2) 0;
+        transition-duration: $fast_trans;
+      }
     }
-    a::before {
-      background-color: $green_low_sat;
-      z-index: 1;
-    }
-    a::after {
-      background-color: $magenta_low_sat;
-      z-index: 0;
+  }
+
+  // Drop-Down Menu with page links Narrow screen ONLY
+  #dropDownMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 5em;
+    left: -100%;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 15px 0;
+    background-color: $green_clear;
+    transition: all $slow_trans;
+    z-index: 99;
+    li {
+      padding: 1.2em 2em;
+      margin: 0 auto;
+      a {
+        position: relative;
+        z-index: 100;
+        transition: all ease $fast_trans;
+        &::before,
+        &::after {
+          border-radius: $border-radius-round;
+          width: 100%;
+        }
+        h2 {
+          font-size: 2.4em;
+          color: $magenta_low_sat;
+          position: relative;
+          margin: 0.5em 1em;
+          transition: all ease $med_trans;
+          z-index: 2;
+          cursor: pointer;
+          .prefix {
+            color: $magenta_clear;
+          }
+        }
+      }
     }
   }
 }
@@ -111,192 +129,159 @@ nav {
 // Multiple Hover Animations ONLY for devices that support it
 // ----------------------------------------------------------
 @media (hover: hover) {
-  #hamburger:hover {
-    span:nth-child(2) {
-      transform: translateX(10px);
-      background-color: adjust-color($color: $green, $alpha: -0.5);
-    }
-  }
-
-  // ---------------- WideScreen Page Links ----------------
-  ul li {
-    // Text Transformation
-    a:hover h2 {
-      color: $magenta_low_sat;
-      .prefix {
-        color: $magenta_clear;
+  #navigation {
+    #hamburger:hover {
+      span:nth-child(2) {
+        transform: translateX(10px);
+        background-color: adjust-color($color: $green, $alpha: -0.5);
       }
     }
 
-    a::before,
-    a::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: $border-radius-med;
-      width: 0;
-      transition: all ease 200ms;
+    // ---------------- WideScreen Page Links ----------------
+    ul li {
+      a:hover h2 {
+        color: $magenta_low_sat;
+        .prefix {
+          color: $magenta_clear;
+        }
+      }
+      a:hover::before,
+      a:hover::after {
+        width: 100%;
+      }
     }
-    a:hover::before,
-    a:hover::after {
-      width: 100%;
+    #dropDownMenu li a:hover {
+      transform: scale(1.5);
     }
-    a:active::before,
-    a:active h2 {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-    }
-    a::before {
-      background-color: $green;
-      z-index: 1;
-    }
-    a::after {
-      transform: translate($ThreeD_offset, $ThreeD_offset);
-      background-color: $magenta_low_sat;
-      z-index: 0;
-    }
-  }
-
-  // --------- NarrowScreen Page Textile Effects ---------
-  #dropDownMenu li a {
-    z-index: 100;
-  }
-  #dropDownMenu a:active::before {
-    transform: translate($ThreeD_offset, $ThreeD_offset);
-  }
-  #dropDownMenu a:hover {
-    transform: scale(1.5);
-  }
-  #dropDownMenu a:active h2 {
-    transform: translate($ThreeD_offset, $ThreeD_offset);
   }
 }
 
 // Switches Between Banner NavLinks vs Hamburger
 @media (max-width: 1250px) {
-  nav {
-    ul {
-      display: none;
+  #navigation {
+    nav {
+      ul {
+        display: none;
+      }
+      #hamburger {
+        display: block;
+      }
     }
-    #hamburger {
-      display: block;
+    #dropDownMenu {
+      display: flex;
     }
-  }
-  #dropDownMenu {
-    display: flex;
   }
 }
 // ------------------------------------------------------
 // ------------React Transition Group Classes------------
 // ------------------------------------------------------
-// Hamburger Butten
-// Enter State
-.hambState-enter #hamburger {
-  span:nth-child(1) {
-    rotate: 0deg;
+#navigation {
+  // Hamburger Butten
+  // Enter State
+  .hambState-enter #hamburger {
+    span:nth-child(1) {
+      rotate: 0deg;
+    }
+    span:nth-child(2) {
+      translate: 0 0;
+    }
+    span:nth-child(3) {
+      rotate: 0deg;
+    }
   }
-  span:nth-child(2) {
-    translate: 0 0;
+  .hambState-enter-active #hamburger {
+    span:nth-child(1) {
+      rotate: 45deg;
+      translate: 0 10px;
+    }
+    span:nth-child(2) {
+      translate: 10px 0;
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      rotate: -45deg;
+      translate: 0 -10px;
+    }
   }
-  span:nth-child(3) {
-    rotate: 0deg;
+  .hambState-enter-done #hamburger {
+    span:nth-child(1) {
+      rotate: 45deg;
+      translate: 0 10px;
+    }
+    span:nth-child(2) {
+      translate: 10px 0;
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      rotate: -45deg;
+      translate: 0 -10px;
+    }
   }
-}
-.hambState-enter-active #hamburger {
-  span:nth-child(1) {
-    rotate: 45deg;
-    translate: 0 10px;
+  // Exit State
+  .hambState-exit #hamburger {
+    span:nth-child(1) {
+      rotate: 45deg;
+      translate: 0 10px;
+    }
+    span:nth-child(2) {
+      translate: 10px 0;
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      rotate: -45deg;
+      translate: 0 -10px;
+    }
   }
-  span:nth-child(2) {
-    translate: 10px 0;
-    opacity: 0;
+  .hambState-exit-active #hamburger {
+    span:nth-child(1) {
+      rotate: 0deg;
+      translate: 0 0px;
+    }
+    span:nth-child(2) {
+      translate: 0 0;
+      opacity: 1;
+    }
+    span:nth-child(3) {
+      rotate: 0deg;
+      translate: 0 0px;
+    }
   }
-  span:nth-child(3) {
-    rotate: -45deg;
-    translate: 0 -10px;
+  .hambState-exit-done #hamburger {
+    span:nth-child(1) {
+      rotate: 0deg;
+      translate: 0 0px;
+    }
+    span:nth-child(2) {
+      translate: 0 0;
+      opacity: 1;
+    }
+    span:nth-child(3) {
+      rotate: 0deg;
+      translate: 0 0px;
+    }
   }
-}
-.hambState-enter-done #hamburger {
-  span:nth-child(1) {
-    rotate: 45deg;
-    translate: 0 10px;
-  }
-  span:nth-child(2) {
-    translate: 10px 0;
-    opacity: 0;
-  }
-  span:nth-child(3) {
-    rotate: -45deg;
-    translate: 0 -10px;
-  }
-}
-// Exit State
-.hambState-exit #hamburger {
-  span:nth-child(1) {
-    rotate: 45deg;
-    translate: 0 10px;
-  }
-  span:nth-child(2) {
-    translate: 10px 0;
-    opacity: 0;
-  }
-  span:nth-child(3) {
-    rotate: -45deg;
-    translate: 0 -10px;
-  }
-}
-.hambState-exit-active #hamburger {
-  span:nth-child(1) {
-    rotate: 0deg;
-    translate: 0 0px;
-  }
-  span:nth-child(2) {
-    translate: 0 0;
-    opacity: 1;
-  }
-  span:nth-child(3) {
-    rotate: 0deg;
-    translate: 0 0px;
-  }
-}
-.hambState-exit-done #hamburger {
-  span:nth-child(1) {
-    rotate: 0deg;
-    translate: 0 0px;
-  }
-  span:nth-child(2) {
-    translate: 0 0;
-    opacity: 1;
-  }
-  span:nth-child(3) {
-    rotate: 0deg;
-    translate: 0 0px;
-  }
-}
 
-// DropDown Menu Transitions
-// Enter
-.dropMenu-enter #dropDownMenu {
-  display: flex;
-  left: -100%;
-}
-.dropMenu-enter-active #dropDownMenu {
-  left: 0;
-}
-.dropMenu-enter-done #dropDownMenu {
-  left: 0;
-}
-// Exit
-.dropMenu-exit #dropDownMenu {
-  left: 0;
-}
-.dropMenu-exit-active #dropDownMenu {
-  left: -100%;
-}
-.dropMenu-exit-done #dropDownMenu {
-  left: -100%;
-  display: none;
+  // DropDown Menu Transitions
+  // Enter
+  .dropMenu-enter #dropDownMenu {
+    display: flex;
+    left: -100%;
+  }
+  .dropMenu-enter-active #dropDownMenu {
+    left: 0;
+  }
+  .dropMenu-enter-done #dropDownMenu {
+    left: 0;
+  }
+  // Exit
+  .dropMenu-exit #dropDownMenu {
+    left: 0;
+  }
+  .dropMenu-exit-active #dropDownMenu {
+    left: -100%;
+  }
+  .dropMenu-exit-done #dropDownMenu {
+    left: -100%;
+    display: none;
+  }
 }

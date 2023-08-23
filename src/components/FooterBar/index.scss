@@ -29,7 +29,7 @@ footer {
       background-color: $magenta;
       h3 {
         color: $green;
-        font-family: "Kani", sans-serif;
+        font-family: "Kanit", sans-serif;
         font-size: 125%;
         font-weight: 600;
         position: relative;
@@ -58,6 +58,7 @@ footer {
       font-size: 1.25em;
       position: relative;
       p {
+        font-weight: bold;
         text-align: center;
         transition: all $fast_trans;
         color: $magenta_low_sat;
