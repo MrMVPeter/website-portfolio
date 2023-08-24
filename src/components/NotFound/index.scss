@@ -1,10 +1,10 @@
 @use "../../abstracts/" as *;
-#not-found-page {
-  display: flex;
+#notFoundPage {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  margin: 0 5vw;
   h1 {
     color: $green;
     font-size: 15vw;

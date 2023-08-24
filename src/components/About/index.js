@@ -36,8 +36,8 @@ function About() {
             {timeLineItems.map((item, index) => {
               return (
                 <li>
-                  <h2 className="barDate">{item["date"]}</h2>
-                  <h2 className="barName">{item["name"]}</h2>
+                  <p className="barDate">{item["date"]}</p>
+                  <p className="barName">{item["name"]}</p>
                 </li>
               );
             })}

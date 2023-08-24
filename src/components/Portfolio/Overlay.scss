@@ -1,16 +1,15 @@
 @use "../../abstracts/" as *;
 
-.screen_overlay {
-  // height: 100%;
+.screenOverlay {
+  display: none;
   width: 100%;
   background-color: $magenta_semi_clear;
   position: absolute;
   transition: all ease $med_trans;
   top: 0;
   flex-direction: column;
-  display: none;
   z-index: 99;
-  #screen_overlay_body {
+  #screenOverlayBody {
     background-color: $magenta_low_sat;
     margin: 50px 5vw;
     border-radius: 50px;

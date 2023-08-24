@@ -3,8 +3,8 @@ import iconMapping from "./iconMapping";
 
 function Overlay({ handleClose, project }) {
   return (
-    <div className="screen_overlay" onClick={handleClose}>
-      <div id="screen_overlay_body">
+    <div className="screenOverlay" onClick={handleClose}>
+      <div id="screenOverlayBody">
         <h1>{project.name}</h1>
         <p>{project.description}</p>
         <img src={iconMapping[project.id]} alt="Project_Icon"></img>
