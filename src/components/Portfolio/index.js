@@ -10,13 +10,13 @@ import Overlay from "./Overlay";
 function ProjectTile(props) {
   const iconSrc = iconMapping[props.data.id];
   return (
-    <div className="project_tile">
-      <h1>{props.data.name}</h1>
+    <div className="projectTile">
+      <h3>{props.data.name}</h3>
       <div className="tileBody">
         {iconSrc && (
-          <img className="project_icon" src={iconSrc} alt="Project Icon" />
+          <img className="projectIcon" src={iconSrc} alt="Project Icon" />
         )}
-        <div className="tile_overlay">
+        <div className="tileOverlay">
           <button
             onClick={() => {
               props.handleToggleShowOverlay(props.data);
@@ -34,10 +34,10 @@ function ProjectTile(props) {
 // Creates rows and fills them with tiles
 function ProjectType(props) {
   return (
-    <div className="project_type">
-      <h1>{props.data.name}</h1>
+    <div className="projectTypeListArea">
+      <h2 className="highlighted">{props.data.name}</h2>
       {
-        <div className="project_type_body">
+        <div className="projectTypeListItems">
           {props.data.projects.map((item) => {
             return (
               <ProjectTile
@@ -92,8 +92,8 @@ function Portfolio() {
 
         {/* Persistant Portfolio Page */}
         <h1>Portfolio Page</h1>
-        <div id="project_list">
-          {projectData.map((item, index) => {
+        <div id="projectListArea">
+          {projectData.map((item) => {
             return (
               <ProjectType
                 data={item}
