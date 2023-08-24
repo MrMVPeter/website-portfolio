@@ -38,6 +38,7 @@ function NavBar() {
           <div>
             <button
               id="hamburger"
+              aria-label="Drop Down Button"
               onClick={() => {
                 setVerticalNavOverlayActive(!verticalNavOverlayActive);
               }}

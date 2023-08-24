@@ -14,6 +14,8 @@ footer {
     font-weight: 600;
     position: relative;
     transition: all $fast_trans;
+    text-shadow: -1px -1px 0 $magenta_dark, 1px -1px 0 $magenta_dark,
+      -1px 1px 0 $magenta_dark, 1px 1px 0 $magenta_dark;
   }
 
   p {
@@ -25,7 +27,7 @@ footer {
 
   // Social Media Icons
   .footerIcons {
-    height: 2em;
+    height: 32px;
     margin: 0.55em 1em;
     transition: all $med_trans;
   }
