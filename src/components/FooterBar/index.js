@@ -9,17 +9,18 @@ function FooterBar() {
   const iconSrc = (id) => iconMapping[id];
   return (
     <footer>
-      <div>
+      <ul>
         {socialLinks.map((item) => (
-          <a key={item.id} href={item.linkURL} target={item.target}>
-            <img
-              className="footerIcons"
-              src={iconSrc(item.id)}
-              alt={item.name}
-            />
+          <a
+            className="footerIcons"
+            key={item.id}
+            href={item.linkURL}
+            target={item.target}
+          >
+            <img src={iconSrc(item.id)} alt={item.name} />
           </a>
         ))}
-      </div>
+      </ul>
       <div id="footerResumeAndContact">
         <a href={resume} target="_blank" rel="noreferrer">
           <h3>Resume</h3>

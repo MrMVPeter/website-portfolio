@@ -10,7 +10,7 @@ footer {
   h3 {
     color: $green;
     font-family: "Kanit", sans-serif;
-    font-size: 125%;
+    font-size: 150%;
     font-weight: 600;
     position: relative;
     transition: all $fast_trans;
@@ -25,27 +25,38 @@ footer {
     color: $magenta_low_sat;
   }
 
-  // Social Media Icons
   .footerIcons {
-    height: 32px;
+    display: block;
+    width: 48px;
+    height: 48px;
     margin: 8px 16px;
-    transition: all $med_trans;
+    img {
+      transition: all ease $fast_trans;
+      height: 100%;
+      width: 100%;
+    }
   }
 
   // Resume and Contact Buttons
   #footerResumeAndContact {
     display: flex;
+    height: 48px;
+    width: 350px;
     a {
       position: relative;
       display: flex;
       justify-content: center;
-      width: 8em;
-      padding: 0.5em 0.5em;
+      width: 50%;
+      padding: auto;
       margin: 0 0.5em;
       border: solid;
       border-color: black;
       border-width: 2px;
       background-color: $magenta;
+      flex-grow: 1;
+      h3 {
+        margin: auto;
+      }
     }
     // Hover animation overlay
     a::before {
@@ -88,9 +99,9 @@ footer {
 
 @media (hover: hover) {
   // Social Media Icons
-  .footerIcons {
+  .footerIcons img {
     &:hover {
-      transform: scale(1.5);
+      transform: scale(1.25);
     }
     &:active {
       transform: scale(1);
@@ -103,7 +114,7 @@ footer {
       width: 100%;
     }
     &:hover h3 {
-      color: $magenta_low_sat;
+      color: $magenta;
     }
   }
 
