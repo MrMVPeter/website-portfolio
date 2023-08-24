@@ -16,8 +16,8 @@
       {
         "name": "React.js Portfolio",
         "id": 1,
-        "description": "Welcome to my professional portfolio website! Designed and developed to showcase my skills, projects, and experiences, this site serves as a window into my journey as a developer. Every pixel has been meticulously crafted to ensure that you get a glimpse of not just my technical abilities, but also my design sensibility and attention to detail.",
-        "relevant_technologies": "Frontend Development, Responsive Design, SEO Optimization, Performance Optimization"
+        "description": "A responsive, user-centric portfolio website designed and developed using the latest web technologies such as React.js, SCSS, and Helmet for SEO optimization. The site not only showcases my skills and projects but is also a testament to my commitment to best web practices—SEO optimization, accessibility, performance, and best coding standards.",
+        "relevant_technologies": "Frontend Development, Responsive Design, SEO Optimization, Performance Optimization, SCSS, Helmet, ReactJS"
       }
     ]
   },
