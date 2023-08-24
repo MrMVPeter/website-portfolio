@@ -81,7 +81,7 @@ function Portfolio() {
         />
       </Helmet>
 
-      <body className="bodyPage" id="portfolio_page">
+      <body className="bodyPage" id="portfolioPage">
         {/* Overlay Element */}
         <CSSTransition in={showOverlay} timeout={600} classNames="showOverlay">
           <Overlay

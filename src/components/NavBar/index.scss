@@ -1,5 +1,6 @@
 @use "../../abstracts/" as *;
 #navigation {
+  background-color: $green_very_clear;
   // Global Navigation Styles
   h1 {
     font-size: min(3em, 8vw);

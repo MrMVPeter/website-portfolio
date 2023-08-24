@@ -1,5 +1,5 @@
 @use "../../abstracts/" as *;
-html body #root #App #portfolio_page {
+#portfolioPage {
   flex-direction: column;
   h1 {
     text-align: center;
@@ -83,11 +83,7 @@ html body #root #App #portfolio_page {
 // ----------------------------------------------------------
 
 @media (hover: hover) {
-  html
-    body
-    #root
-    #App
-    #portfolio_page
+  #portfolioPage
     #project_list
     .project_type
     .project_type_body
