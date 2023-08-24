@@ -11,14 +11,16 @@ function FooterBar() {
     <footer>
       <ul>
         {socialLinks.map((item) => (
-          <a
-            className="footerIcons"
-            key={item.id}
-            href={item.linkURL}
-            target={item.target}
-          >
-            <img src={iconSrc(item.id)} alt={item.name} />
-          </a>
+          <li>
+            <a
+              className="footerIcons"
+              key={item.id}
+              href={item.linkURL}
+              target={item.target}
+            >
+              <img src={iconSrc(item.id)} alt={item.name} />
+            </a>
+          </li>
         ))}
       </ul>
       <div id="footerResumeAndContact">
