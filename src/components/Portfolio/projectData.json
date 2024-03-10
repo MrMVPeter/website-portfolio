@@ -3,6 +3,12 @@
     "name": "Credentials",
     "projects": [
       {
+        "name": "CCNA",
+        "id": 10,
+        "description": "This certificate showcases skills in network fundamentals, access, and security, obtained from the Cisco Certified Network Associate (CCNA) certification. It involved practical experience with configuring and troubleshooting routers and switches, implementing network security protocols, and understanding automation and programmability within network infrastructures. This certification journey emphasizes a robust foundation in designing, securing, and managing both wired and wireless networks.",
+        "relevant_technologies": "Cisco IOS, Switches, Routers, VLANs, OSPF, IP Routing, Network Security, Network Automation"
+      },
+      {
         "name": "CompTIA A+",
         "id": 6,
         "description": "The CompTIA A+ certification is a globally recognized credential designed for IT professionals. Earning this certification demonstrates a strong foundational knowledge in IT operational roles and technical support, proving the individual's capability in troubleshooting and solving problems.",

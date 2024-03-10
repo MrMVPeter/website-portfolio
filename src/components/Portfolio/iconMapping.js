@@ -8,6 +8,7 @@ import projectIcon6 from "../../assets/icons/Portfolio/comptia.png";
 import projectIcon7 from "../../assets/icons/Portfolio/synthesizer.png";
 import projectIcon8 from "../../assets/icons/Portfolio/network_design.png";
 import projectIcon9 from "../../assets/icons/Portfolio/homelab.png";
+import projectIcon10 from "../../assets/icons/Portfolio/ccna.png";
 import projectIcon99 from "../../assets/icons/Portfolio/tiktok.png";
 // ... other images
 
@@ -22,6 +23,7 @@ const iconMapping = {
   7: projectIcon7,
   8: projectIcon8,
   9: projectIcon9,
+  10: projectIcon10,
   99: projectIcon99,
 };
 
